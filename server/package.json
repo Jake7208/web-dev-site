@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "A mock example of the node.js cms system to build for the school",
   "scripts": {
-    "build": "node server/server.js",
-    "start": "nodemon server/server.js"
+    "build": "node server.js",
+    "start": "nodemon server.js"
   },
   "keywords": [
     "node",

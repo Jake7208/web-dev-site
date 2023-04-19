@@ -6,7 +6,8 @@
     "node": "18.x"
   },
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "dev": "nodemon"
   },
   "keywords": [
     "node",

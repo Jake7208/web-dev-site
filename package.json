@@ -1,0 +1,23 @@
+{
+  "name": "restful-cms",
+  "version": "1.0.0",
+  "description": "A mock example of the node.js cms system to build for the school",
+  "scripts": {
+    "build": "node server/server.js",
+    "start": "nodemon server/server.js"
+  },
+  "keywords": [
+    "node",
+    "restful",
+    "api"
+  ],
+  "dependencies": {
+    "express": "^4.18.2",
+    "morgan": "^1.10.0"
+  },
+  "author": "Jacob Price",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
+}

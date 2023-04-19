@@ -2,9 +2,12 @@
   "name": "restful-cms",
   "version": "1.0.0",
   "description": "A mock example of the node.js cms system to build for the school",
+  "engines": {
+    "node": "18.x"
+  },
   "scripts": {
-    "build": "node server.js",
-    "start": "nodemon server.js"
+    "start": "node server.js",
+    "dev": "nodemon server.js"
   },
   "keywords": [
     "node",

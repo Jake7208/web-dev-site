@@ -19,7 +19,7 @@ router.get('/getById', (req, res, next) => {
     const id = req.params.announcementId;
     if (id === 'special') {
         res.status(200).json({
-            message: 'you corretly read the special parameter',
+            message: 'you correctly read the special parameter',
             id: id
         })
     }else {
@@ -29,9 +29,28 @@ router.get('/getById', (req, res, next) => {
     };
 });
 
+router.get('/hide', (req, res, next) => {
+    const hide = req.query.hide;
+    if (hide.hidden != true){
+        res.status(200).json({
+            message: 'the content is visible'
+        })
+        
+    } else {
+        res.status(200).json({
+            message: 'The content is hidden'
+        })
+    }
+})
+
 router.delete('/deleteById', (req, res, next) => {
+    const delAnnouncement = {
+        deletedId: req.body.announcementId,
+    }
     res.status(200).json ({
         message: 'delete Announcement',
+        announcementId: delAnnouncement
+
     });
 });
 

@@ -30,10 +30,10 @@ router.get('/getById', (req, res, next) => {
 });
 
 router.get('/hide', (req, res, next) => {
-    const hide = req.query.hide;
-    if (hide.hidden != true){
+    const hidden = req.query.hide;
+    if (!!hidden){
         res.status(200).json({
-            message: 'the content is visible'
+            message: 'the content is visible',
         })
         
     } else {
@@ -44,12 +44,9 @@ router.get('/hide', (req, res, next) => {
 })
 
 router.delete('/deleteById', (req, res, next) => {
-    const delAnnouncement = {
-        deletedId: req.body.announcementId,
-    }
     res.status(200).json ({
         message: 'delete Announcement',
-        announcementId: delAnnouncement
+        id: req.body.id
 
     });
 });

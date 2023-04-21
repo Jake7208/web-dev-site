@@ -1,8 +1,10 @@
 const express = require('express');
 const app = express();
+const {MongoClient} = require('mongodb')
 const morgan = require('morgan')
 const bodyParser = require('body-parser')
 const cors = require('cors')
+const mongoose = require('mongoose')
 
 
 const announcementRoutes = require('./api/routes/announcements');
@@ -10,6 +12,8 @@ const eventRoute = require('./api/routes/events')
 const rescourceRoute = require('./api/routes/resources')
 const newsLetterRoute = require('./api/routes/newsLetter')
 const videoRoute = require('./api/routes/videos')
+
+mongoose.connect('')
 
 app.use(morgan('dev'))
 app.use(bodyParser.urlencoded({extended: false}));

@@ -1,6 +1,0 @@
-{
-    announcements {
-        _id:"", title: "Announcement", description: "hello", date
-    }
-}
-db.announcements.insertOne({id: "announcement_id_1", title: "An1", description: "first announcement", date: new Date("2023-04-20T00:00:00Z")})

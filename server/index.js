@@ -56,7 +56,7 @@ app.use((error, req, res, next) => {
 
 // console.log(process.env)
 
-const DB = process.env.DATABASE.replace('<PASSWORD>', process.env.DATABASE_PASSWORD);
+const DB = process.env.DATABASE;
 mongoose.connect(DB, {
     useNewUrlParser: true
     // UseCreateIndex: true,

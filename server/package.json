@@ -1,20 +1,16 @@
 {
-  "name": "restful-cms",
+  "name": "test-vercel",
   "version": "1.0.0",
-  "description": "A mock example of the node.js cms system to build for the school",
-  "engines": {
-    "node": "18.x"
-  },
+  "description": "",
+  "main": "index.js",
   "scripts": {
-    "start": "node server.js",
-    "start:dev": "nodemon server.js",
-    "start:prod": "NODE_ENV=production nodemon server.js"
+    "start": "node index.js",
+    "start:dev": "nodemon index.js",
+    "start:prod": "NODE_ENV=production nodemon index.js"
   },
-  "keywords": [
-    "node",
-    "restful",
-    "api"
-  ],
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "dependencies": {
     "body-parser": "^1.20.2",
     "cors": "^2.8.5",
@@ -23,8 +19,6 @@
     "mongoose": "^7.0.5",
     "morgan": "^1.10.0"
   },
-  "author": "Jacob Price",
-  "license": "ISC",
   "devDependencies": {
     "nodemon": "^2.0.22",
     "dotenv": "^16.0.3"

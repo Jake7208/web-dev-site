@@ -13,7 +13,7 @@ const newsLetterRoute = require('./api/routes/newsLetter')
 const videoRoute = require('./api/routes/videos')
 
 app.get('/', (req, res) => {
-    res.send('Express JS on Vercel')
+    res.send('Express JS on Vercel yay')
 })
 
 if(process.env.NODE_ENV === 'development') {

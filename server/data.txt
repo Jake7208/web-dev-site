@@ -1,0 +1,32 @@
+{
+    announcements {
+        "id": "",
+        "title": "",
+        "description": "",
+        "date":""
+    },
+       events {
+        "id": "",
+        "title": "",
+        "description": "",
+        "date":""
+    },
+       resources {
+        "id": "",
+        "title": "",
+        "description": ""
+    },
+       newsletters {
+        "id": "",
+        "title": "",
+        "number": "",
+        "htmlData": ""
+        "date":""
+    },
+       videos {
+        "id": "",
+        "title": "",
+        "url": "",
+        "date":""
+    }
+}

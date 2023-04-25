@@ -123,6 +123,11 @@
 .menu-item-NX {
 	margin: auto;
 }
+
+.menu-item-NX-ql {
+	display: none;
+}
+
 .menu-item:hover {
 	background-color: #cf142b;
 }

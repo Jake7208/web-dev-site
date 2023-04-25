@@ -15,10 +15,6 @@ const SideNavBar = () => {
 	const [selected, setSelected] = useState(dropdownMenu[0]);
 	const [isExpanded, setExpandState] = useState(false);
 	const menuItems = [
-		// {
-		// 	text: "Quick Links",
-		// 	icon: BiLink,
-		// },
 		{
 			text: "Newsletter",
 			icon: <BiNews />,

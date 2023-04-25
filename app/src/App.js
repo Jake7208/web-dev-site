@@ -1,6 +1,6 @@
 import SideNavBar from "./components/SideNavBar";
 import AnnouncementBanner from "./components/AnnouncementBanner";
-import "./AppStyles.css";
+import "./App.css";
 
 function App() {
 	return (

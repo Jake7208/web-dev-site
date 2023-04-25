@@ -170,3 +170,7 @@
 .logout-icon:hover {
 	background-color: var(--primary);
 }
+
+.chev {
+	margin-left: 15px;
+}

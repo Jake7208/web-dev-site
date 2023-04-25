@@ -3,6 +3,7 @@ import { Listbox } from "@headlessui/react";
 import "./SideNavBar.css";
 import { BiLink, BiNews } from "react-icons/bi";
 import { FiVideo } from "react-icons/fi";
+import { FaChevronDown } from "react-icons/fa";
 
 const SideNavBar = () => {
 	const dropdownMenu = [
@@ -55,6 +56,7 @@ const SideNavBar = () => {
 							className={isExpanded ? "menu-item-ql" : "menu-item menu-item-NX"}
 						>
 							Quick Links
+							<FaChevronDown className="chev" />
 						</Listbox.Button>
 						<Listbox.Options>
 							{dropdownMenu.map((link) => (

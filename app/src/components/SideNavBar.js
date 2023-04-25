@@ -34,11 +34,7 @@ const SideNavBar = () => {
 				<div className="nav-heading">
 					{isExpanded && (
 						<div className="nav-brand">
-							<img
-								src="icons/btech3.png"
-								alt="nav brand"
-								style={{ height: 75, width: 85 }}
-							/>
+							<img src="icons/btech3.png" alt="nav brand" />
 							<h2>Web & Mobile Development</h2>
 						</div>
 					)}

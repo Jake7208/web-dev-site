@@ -114,7 +114,8 @@
 	text-decoration: none;
 	font-size: medium;
 	text-transform: uppercase;
-	margin-left: 85px;
+	padding-left: 70px;
+	margin: auto 20px;
 	border-radius: 10px;
 	align-items: center;
 	background-color: #1a212b;
@@ -178,4 +179,14 @@
 
 .chev {
 	margin-left: 15px;
+}
+
+.dropdown-options-container {
+	/*position: absolute;
+	overflow: auto;
+	max-height: fit-content;*/
+}
+
+.dropdown-options {
+	/*position: relative;*/
 }

@@ -1,7 +1,7 @@
 /* NX = not expanded */
 
 .side-nav-container {
-	background-color: var(--dark);
+	background-color: #1a212b;
 	width: 300px;
 	height: 100vh;
 	position: relative;
@@ -20,6 +20,7 @@
 .nav-footer {
 	/* border: 2px solid white; */
 	display: grid;
+	background-color: #1a212b;
 }
 
 .nav-heading {

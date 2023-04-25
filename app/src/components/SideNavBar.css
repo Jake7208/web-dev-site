@@ -109,7 +109,7 @@
 	margin: auto;
 }
 .menu-item:hover {
-	background-color: var(--primary);
+	background-color: #cf142b;
 }
 .menu-item img {
 	width: 30px;

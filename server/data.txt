@@ -1,20 +1,21 @@
 {
     announcements {
-        "id": "",
-        "title": "",
-        "description": "",
-        "date":""
+        "id": "1",
+        "title": "announcement A",
+        "description": "First Announcement",
+        "date": 2023-04-25
+
     },
        events {
-        "id": "",
-        "title": "",
-        "description": "",
-        "date":""
+          "id": "1",
+        "title": "events A",
+        "description": "First events",
+        "date": 2023-04-25
     },
        resources {
-        "id": "",
-        "title": "",
-        "description": ""
+        "id": "1",
+        "title": "resource A",
+        "description": "The first resources"
     },
        newsletters {
         "id": "",

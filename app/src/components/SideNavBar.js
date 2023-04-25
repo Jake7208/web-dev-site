@@ -7,6 +7,8 @@ import { FiVideo } from "react-icons/fi";
 const SideNavBar = () => {
 	const dropdownMenu = [
 		{ name: "Student Portal" },
+		{ name: "Canvas" },
+		{ name: "Discord" },
 		{ name: "GitHub" },
 		{ name: "Figma" },
 		{ name: "VS Code" },

@@ -180,3 +180,13 @@
 .chev {
 	margin-left: 15px;
 }
+
+.dropdown-options-container {
+	/*position: absolute;
+	overflow: auto;
+	max-height: fit-content;*/
+}
+
+.dropdown-options {
+	/*position: relative;*/
+}

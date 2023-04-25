@@ -56,9 +56,14 @@ const SideNavBar = () => {
 							Quick Links
 							<FaChevronDown className="chev" />
 						</Listbox.Button>
-						<Listbox.Options>
+						<Listbox.Options className="dropdown-options-container">
 							{dropdownMenu.map((link) => (
-								<Listbox.Option key={link.id} value={link} disabled={link.unavailable}>
+								<Listbox.Option
+									className="dropdown-options"
+									key={link.id}
+									value={link}
+									disabled={link.unavailable}
+								>
 									<a href={link.href}>{link.name}</a>
 								</Listbox.Option>
 							))}

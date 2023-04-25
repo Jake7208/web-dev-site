@@ -52,7 +52,7 @@ const SideNavBar = () => {
 				<div className="nav-menu">
 					<Listbox value={selected} onChange={setSelected}>
 						<Listbox.Button
-							className={isExpanded ? "menu-item" : "menu-item menu-item-NX"}
+							className={isExpanded ? "menu-item-ql" : "menu-item menu-item-NX"}
 						>
 							Quick Links
 						</Listbox.Button>

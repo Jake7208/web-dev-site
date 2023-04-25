@@ -104,12 +104,29 @@
 	text-transform: uppercase;
 	margin: auto 20px;
 	border-radius: 10px;
+	align-items: center;
+}
+
+.menu-item-ql {
+	height: 57px;
+	display: flex;
+	color: var(--light);
+	text-decoration: none;
+	font-size: medium;
+	text-transform: uppercase;
+	margin-left: 85px;
+	border-radius: 10px;
+	align-items: center;
+	background-color: #1a212b;
 }
 
 .menu-item-NX {
 	margin: auto;
 }
 .menu-item:hover {
+	background-color: #cf142b;
+}
+.menu-item-ql:hover {
 	background-color: #cf142b;
 }
 .menu-item img {

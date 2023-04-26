@@ -27,9 +27,6 @@ const AnnouncementBanner = () => {
           <div key={post.id}>
             <h2>{post.title}</h2>
             <p>{post.body}</p>
-            <div>
-              <div>Delete</div>
-            </div>
           </div>
         );
       })}

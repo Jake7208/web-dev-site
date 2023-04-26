@@ -2,10 +2,22 @@ const express = require('express');
 const router = express.Router();
 
 router.get('/getAll', (req, res, next ) => { // getting the announcementRoutes key from the app.js file.
-    res.status(200).json({
-        message: 'Handling GET request to /newsLetter'
+    const newsLetter = [
+        {
+                "id": "1",
+                "title": "newsletter web and mobile",
+                "number": 356,
+                "indexHtml": "where html will go",
+                "date": {
+                  "$date": "2023-04-25T00:00:01.994Z"
+                }
+              }
+      ];
+      
+      const jsonNewsLetter = JSON.stringify(newsLetter);
+      
+      res.send(jsonNewsLetter);
     });
-});
 
 router.post('/updateById', (req, res, next ) => {
     res.status(201).json({

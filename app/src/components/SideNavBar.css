@@ -108,6 +108,7 @@
 }
 
 .menu-item-ql {
+	border: none;
 	height: 57px;
 	display: flex;
 	color: var(--light);

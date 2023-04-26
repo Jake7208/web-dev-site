@@ -108,6 +108,7 @@
 }
 
 .menu-item-ql {
+	border: none;
 	height: 57px;
 	display: flex;
 	color: var(--light);
@@ -138,6 +139,17 @@
 .menu-item img {
 	width: 30px;
 	padding: 0 20px;
+}
+
+.link-icon {
+	display: flex;
+	height: 30px;
+	width: 30px;
+}
+
+.menu-item-icon {
+	height: 30px;
+	width: 30px;
 }
 
 .nav-footer {

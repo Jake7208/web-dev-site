@@ -3,9 +3,18 @@ const router = express.Router();
 
 router.get("/getAll", (req, res, next) => {
   // getting the announcementRoutes key from the app.js file.
-  res.status(200).json({
-    message: "Handling GET request to /announcements",
-  });
+  const announcements = [
+    {
+      "id": "1",
+      "title": "announcement A",
+      "description": "First Announcement",
+      "date": "2023-04-25"
+    }
+  ];
+  
+  const jsonAnnouncements = JSON.stringify(announcements);
+  
+  res.send(jsonAnnouncements);
 });
 
 router.post("/updateById/:announcementId", (req, res, next) => {

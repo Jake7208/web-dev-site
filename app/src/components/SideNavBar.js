@@ -53,6 +53,7 @@ const SideNavBar = () => {
 				<div className="nav-menu">
 					<Listbox value={selected} onChange={setSelected}>
 						<Listbox.Button className={isExpanded ? "menu-item-ql" : "menu-item-NX-ql"}>
+							<BiLink className="link-icon" />
 							Quick Links
 							<FaChevronDown className="chev" />
 						</Listbox.Button>

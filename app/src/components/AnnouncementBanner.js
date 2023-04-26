@@ -31,7 +31,6 @@ const AnnouncementBanner = () => {
           </div>
         );
       })}
-      <h1>Announcement Banner Goes Here</h1>
     </div>
   );
 };

@@ -4,7 +4,7 @@
 	background-color: #1a212b;
 	width: 300px;
 	height: 100vh;
-	position: relative;
+	position: fixed;
 	color: var(--light);
 
 	transition: 0.4s;
@@ -58,7 +58,7 @@
 }
 
 .hamburger:hover span {
-	background-color: var(--primary);
+	background-color: #cf142b;
 }
 
 .hamburger-in:hover span:nth-child(1) {

@@ -141,6 +141,12 @@
 	padding: 0 20px;
 }
 
+.link-icon {
+	display: flex;
+	height: 30px;
+	width: 30px;
+}
+
 .menu-item-icon {
 	height: 30px;
 	width: 30px;

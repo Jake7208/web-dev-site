@@ -14,12 +14,16 @@ router.post('/updateById', (req, res, next ) => {
 });
 
 
-router.get('/getById/:newsLetterId', (req, res, next) => {
-        res.status(200).json({
-            message: 'newsLetter details',
-            newsLetterId: req.params.newsLetterId
+router.get('/getByNum/:newsLetterNum', (req, res, next) => {
+        newsLetter.find(req.params.newsLetterNum).then((newsLetter) => {
+            if (!newsLetter) {
+                return res.status(404).send();
+            }    
+            res.send(newsLetter);
+        }).catch((error) => {
+            res.status(500).send(error);
         })
-})
+    })
 
 
 

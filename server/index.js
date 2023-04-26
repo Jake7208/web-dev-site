@@ -6,6 +6,8 @@ const app = express();
 const mongoose = require("mongoose");
 require("dotenv").config();
 
+app.options('*', cors())
+
 const announcementRoutes = require("./api/routes/announcements");
 const eventRoute = require("./api/routes/events");
 const resourceRoute = require("./api/routes/resources");
@@ -23,8 +25,6 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 // preventing cors errors
-app.use(cors())
-
 
 // router connections for routes file
 app.use("/api/announcements", announcementRoutes);

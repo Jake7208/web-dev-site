@@ -23,11 +23,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 // preventing cors errors
-app.use(
-  cors({
-    origin: "*",
-  })
-);
+app.use(cors())
+
 
 // router connections for routes file
 app.use("/api/announcements", announcementRoutes);

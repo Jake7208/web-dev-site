@@ -3,6 +3,7 @@ import AnnouncementBanner from "./components/AnnouncementBanner";
 import "./App.css";
 import NewsLetter from "./components/NewsLetter";
 import SchoolCalendar from "./components/SchoolCalendar";
+import WebEvents from "./components/WebEvents";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <AnnouncementBanner />
       <NewsLetter />
       <SchoolCalendar />
+      <WebEvents />
     </div>
   );
 }

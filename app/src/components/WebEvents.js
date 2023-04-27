@@ -1,9 +1,9 @@
 import React from "react";
 import useFetch from "../Hooks/useFetch";
 
-const NewsLetter = () => {
+const WebEvents = () => {
   const { data: posts, error } = useFetch(
-    `${process.env.REACT_APP_BACKEND_URL}/newsLetter/getNewsLetter`
+    `${process.env.REACT_APP_BACKEND_URL}/events/getAll`
   );
 
   if (!posts && !error) {
@@ -23,8 +23,8 @@ const NewsLetter = () => {
       {posts.map((post) => {
         return (
           <div key={post.id}>
-            <h2>{post.number}</h2>
-            <p>{post.title}</p>
+            <h1>{post.title}</h1>
+            <h2>{post.description}</h2>
             <p>{post.date}</p>
           </div>
         );
@@ -33,4 +33,4 @@ const NewsLetter = () => {
   );
 };
 
-export default NewsLetter;
+export default WebEvents;

@@ -2,6 +2,7 @@ import SideNavBar from "./components/SideNavBar";
 import AnnouncementBanner from "./components/AnnouncementBanner";
 import "./App.css";
 import NewsLetter from "./components/NewsLetter";
+import SchoolCalendar from "./components/SchoolCalendar";
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
       <SideNavBar />
       <AnnouncementBanner />
       <NewsLetter />
+      <SchoolCalendar />
     </div>
   );
 }

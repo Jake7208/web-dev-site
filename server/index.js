@@ -7,7 +7,10 @@ const mongoose = require("mongoose");
 require("dotenv").config();
 
 
-// app.options('*', cors())
+app.use(cors({
+  origin: '*'
+}
+))
 
 const announcementRoutes = require("./api/routes/announcements");
 const eventRoute = require("./api/routes/events");

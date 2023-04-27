@@ -1,15 +1,15 @@
 const express = require("express");
 const router = express.Router();
-const cors = require("cors");
+// const cors = require("cors");
 
-const corsOptions = cors({
-  "origin": "*",
-  "methods": "GET,HEAD,PUT,PATCH,POST,DELETE",
-  "preflightContinue": false,
-  "optionsSuccessStatus": 200
-})
+// const corsOptions = cors({
+//   "origin": "*",
+//   "methods": "GET,HEAD,PUT,PATCH,POST,DELETE",
+//   "preflightContinue": false,
+//   "optionsSuccessStatus": 200
+// })
 
-router.get("/getAll", cors(corsOptions), (req, res, next) => {
+router.get("/getAll", (req, res, next) => {
   // getting the announcementRoutes key from the app.js file.
   const announcements = [
     {

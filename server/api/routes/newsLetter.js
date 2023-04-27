@@ -8,9 +8,7 @@ router.get('/getAll', (req, res, next ) => { // getting the announcementRoutes k
                 "title": "newsletter web and mobile",
                 "number": 356,
                 "indexHtml": "where html will go",
-                "date": {
-                  "$date": "2023-04-25T00:00:01.994Z"
-                }
+                "date": "2023-04-25"
               }
       ];
       
@@ -18,6 +16,38 @@ router.get('/getAll', (req, res, next ) => { // getting the announcementRoutes k
       
       res.send(jsonNewsLetter);
     });
+
+
+// get all the campaigns/newsletters
+
+const client = require("@mailchimp/mailchimp_marketing");
+
+client.setConfig({
+  apiKey: "df09bcacec46d0ac6dae2a802f912102-us5",
+  server: "us5",
+});
+
+// const run = async () => {
+//     const response = await client.campaigns.list();
+//     console.log(response);
+//   };
+  
+//   run();
+  
+
+router.get('/getAll', (req, res, next) => {
+   
+    const run = async () => {
+        const {campaigns} = await client.campaigns.list();
+        // console.log(response);
+        return campaigns.map(a => a.long_archive_url)
+    };
+    run().then((e) => {
+        console.log(e);
+        res.status(200).json(e)
+    });
+    
+})
 
 router.post('/updateById', (req, res, next ) => {
     res.status(201).json({

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { Listbox } from "@headlessui/react";
 import "./SideNavBar.css";
 import { BiLink, BiNews } from "react-icons/bi";
@@ -109,7 +110,14 @@ const SideNavBar = () => {
             </div>
           </div>
         )}
-        <img className="logout-icon" src="icons/logout.svg" alt="" srcSet="" />
+        <Link to="/AdminPage">
+          <img
+            className="logout-icon"
+            src="icons/logout.svg"
+            alt=""
+            srcset=""
+          ></img>
+        </Link>
       </div>
     </div>
   );

@@ -1,5 +1,25 @@
 const express = require('express');
+const event = require("../../models/eventModel");
 const router = express.Router();
+
+
+// add events getting from database working
+router.post("/addEvent", async (req, res) => {
+    try {
+      const newEvent = await event.create(req.body)
+      res.status(201).json({
+        status: 'success',
+        data: {
+          announcement: newEvent
+        }
+      })
+    } catch (err) {
+      res.status(400).json ({
+        status: 'fail',
+        message: 'what do you mean by that🤨🤔🤨?', err
+      })
+    }
+  });
 
 router.get("/getAll", (req, res, next) => {
     // getting the announcementRoutes key from the app.js file.

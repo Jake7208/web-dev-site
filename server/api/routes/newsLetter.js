@@ -1,25 +1,6 @@
 const express = require('express');
 const router = express.Router();
-
-// router.get('/getAll', (req, res, next ) => { // getting the announcementRoutes key from the app.js file.
-//     const newsLetter = [
-//         {
-//                 "id": "1",
-//                 "title": "newsletter web and mobile",
-//                 "number": 356,
-//                 "indexHtml": "where html will go",
-//                 "date": "2023-04-25"
-//               }
-//       ];
-      
-//       const jsonNewsLetter = JSON.stringify(newsLetter);
-      
-//       res.send(jsonNewsLetter);
-//     });
-
-
-// get all the campaigns/newsletters
-
+//  connecting to the mailchimp api
 const client = require("@mailchimp/mailchimp_marketing");
 
 client.setConfig({
@@ -27,14 +8,7 @@ client.setConfig({
   server: "us5",
 });
 
-// const run = async () => {
-//     const response = await client.campaigns.list();
-//     console.log(response);
-//   };
-  
-//   run();
-  
-
+// gets all the links for the newsletters.
 router.get('/getAll', (req, res, next) => {
    
     const run = async () => {

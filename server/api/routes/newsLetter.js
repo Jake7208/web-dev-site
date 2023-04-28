@@ -1,29 +1,46 @@
 const express = require('express');
 const router = express.Router();
+//  connecting to the mailchimp api
+const client = require("@mailchimp/mailchimp_marketing");
 
-router.get('/getAll', (req, res, next ) => { // getting the announcementRoutes key from the app.js file.
-    const newsLetter = [
-        {
-                "id": "1",
-                "title": "newsletter web and mobile",
-                "number": 356,
-                "indexHtml": "where html will go",
-                "date": {
-                  "$date": "2023-04-25T00:00:01.994Z"
-                }
-              }
-      ];
-      
-      const jsonNewsLetter = JSON.stringify(newsLetter);
-      
-      res.send(jsonNewsLetter);
-    });
-
-router.post('/updateById', (req, res, next ) => {
-    res.status(201).json({
-        message: 'Handling POST request to /newsLetter',
-    });
+client.setConfig({
+  apiKey: "df09bcacec46d0ac6dae2a802f912102-us5",
+  server: "us5",
 });
+
+// gets all the links for the newsletters.
+router.get('/getAll', (req, res, next) => {
+   
+    const run = async () => {
+        const {campaigns} = await client.campaigns.list();
+        // console.log(response);
+        return campaigns.map(a => a.long_archive_url)
+    };
+    run().then((e) => {
+        console.log(e);
+        res.status(200).json(e)
+    });
+    
+})
+
+// router.get('/getById', (req, res, next) => {
+   
+//     const run = async () => {
+//         const {campaigns} = await client.campaigns.get();
+//         // console.log(response);
+//         return campaigns.map(a => a.long_archive_url)
+//     };
+//     run().then((e) => {
+//         console.log(e);
+//         res.status(200).json(e)
+//     });
+    
+// })
+// router.post('/updateById', (req, res, next ) => {
+//     res.status(201).json({
+//         message: 'Handling POST request to /newsLetter',
+//     });
+// });
 
 
 router.get('/getByNum/:newsLetterNum', (req, res, next) => {

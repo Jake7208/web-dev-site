@@ -6,11 +6,10 @@ const app = express();
 const mongoose = require("mongoose");
 require("dotenv").config();
 
-
+// preventing cors errors
 app.use(cors({
   origin: '*'
-}
-))
+}))
 
 const announcementRoutes = require("./api/routes/announcements");
 const eventRoute = require("./api/routes/events");
@@ -28,16 +27,19 @@ if (process.env.NODE_ENV === "development") {
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-// preventing cors errors
 
-// router connections for routes file
+// !!! router connections for routes file (not an error) 
 app.use("/api/announcements", announcementRoutes);
 app.use("/api/events", eventRoute);
 app.use("/api/resources", resourceRoute);
 app.use("/api/newsLetter", newsLetterRoute);
 app.use("/api/videos", videoRoute);
 
-// middleware
+
+
+// !!! middleware !!! (not an error) \
+app.use(express.json())
+
 app.use((req, res, next) => {
   const error = new Error("Not found");
   error.status = 404;
@@ -52,19 +54,30 @@ app.use((error, req, res, next) => {
     },
   });
 });
-// const videoRoute = require('./a')
 
-// console.log(process.env)
-
+// connection to the database 
 const DB = process.env.DATABASE;
 mongoose
   .connect(DB, {
     useNewUrlParser: true,
-    // UseCreateIndex: true,
-    // useFindAndModify: false
-  })
+    useUnifiedTopology:true
+  },)
   .then(() => console.log("DB connection successful!"));
 
+//  const testAnnouncement = new Announcement({
+//   id: 2,
+//   title: 'an1a',
+//   description: 'an1a',
+//   date: '2002-10-9'
+//  })
+
+//  testAnnouncement.save().then(doc => {
+//   console.log(doc);
+//  }).catch(err => {
+//   console.log('Error hold this L 🤨:', err);
+//  })
+
+// connection to port 8080
 const port = process.env.PORT || 8080;
 
 app.listen(port, (err, res) => {

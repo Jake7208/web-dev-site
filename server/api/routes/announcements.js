@@ -40,7 +40,7 @@ router.get("/getAll", async (req, res, next) => {
 
 router.get("/getById/:id", async (req, res) => {
   try {
-    const AnnouncementId = await Announcement.findOne({id: req.params.id});
+    const AnnouncementId = await Announcement.findById(req.params.id);
     res.status(201).json({
       status: 'success',
       data: {
@@ -55,6 +55,25 @@ router.get("/getById/:id", async (req, res) => {
   }
 });
 
+router.patch("/updateById/:id", async (req, res) => {
+  try {
+    const AnnouncementId = await Announcement.findByIdAndUpdate(req.params.id, req.body, {
+      new: true,
+      runValidators: true
+    });
+    res.status(200).json({
+      status: 'success',
+      data: {
+        announcement: AnnouncementId
+      }
+    })
+  }catch (err) {
+    res.status(400).json ({
+      status: 'fail',
+      message: err //'what do you mean by that🤨🤔🤨?'
+    })
+  }
+})
 
 
 router.get("/hide", (req, res, next) => {
@@ -70,11 +89,19 @@ router.get("/hide", (req, res, next) => {
   }
 });
 
-router.delete("/deleteById", (req, res, next) => {
-  res.status(200).json({
-    message: "delete Announcement",
-    id: req.body.id,
-  });
-});
+router.delete('/deleteById/:id', async (req, res) => {
+  try {
+      await Announcement.findByIdAndDelete(req.params.id);
+  res.status(204).json({
+    status: 'success',
+    data: null
+  })
+}catch (err) {
+  res.status(400).json ({
+    status: 'fail',
+    message: 'Your data not gone guess its not deleted...🤨🤔🤨?'
+  })
+}
+})
 
 module.exports = router; // connecting to the router on the index.js file.

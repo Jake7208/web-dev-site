@@ -5,11 +5,6 @@ const router = express.Router();
 
 
 const eventSchema = new mongoose.Schema({
-    id: {
-      type: Number,
-      required: [true, 'event require an id to be passed'],
-      unique: true
-    },
     title: {
       type: String,
       required: [true, 'event must have a title!']

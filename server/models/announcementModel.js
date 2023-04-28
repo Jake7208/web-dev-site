@@ -5,11 +5,6 @@ const router = express.Router();
 
 
 const announcementSchema = new mongoose.Schema({
-    id: {
-      type: Number,
-      required: [true, 'Announcements require an id to be passed'],
-      unique: true
-    },
     title: {
       type: String,
       required: [true, 'Announcements must have a title!']

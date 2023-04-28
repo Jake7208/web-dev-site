@@ -1,5 +1,6 @@
 const express = require('express');
 const Event = require("../../models/eventModel");
+const Resource = require('../../models/resourceModel');
 const router = express.Router();
 
 
@@ -16,7 +17,7 @@ router.post("/add", async (req, res) => {
     } catch (err) {
       res.status(400).json ({
         status: 'fail',
-        message: 'what do you mean by that🤨🤔🤨?', err
+        message: err
       })
     }
   });
@@ -43,7 +44,7 @@ router.get("/getAll", async (req, res, next) => {
     
     router.get("/getById/:id", async (req, res) => {
         try {
-            const EventId = await Event.findOne({id: req.params.id});
+            const EventId = await Event.findById(req.params.id);;
             res.status(201).json({
                 status: 'success',
                 data: {
@@ -58,20 +59,39 @@ router.get("/getAll", async (req, res, next) => {
         }
     });
 
-    router.post('/updateById', (req, res, next ) => {
-        res.status(201).json({
-            message: 'Handling POST request to /events',
+    router.patch("/updateById/:id", async (req, res) => {
+      try {
+        const EventId = await Event.findByIdAndUpdate(req.params.id, req.body, {
+          new: true,
+          runValidators: true
         });
-    });
-
-router.delete('/deleteById/:eventsId', (req, res, next) => {
-    const id = req.params.eventsId
-   if (id !== undefined) {
         res.status(200).json({
-            message: `resources id: ${id}; deleted`,
-            newsLetterId: id
+          status: 'success',
+          data: {
+            event: EventId
+          }
         })
-    }
-})
+      }catch (err) {
+        res.status(400).json ({
+          status: 'fail',
+          message: err //'what do you mean by that🤨🤔🤨?'
+        })
+      }
+    })
+
+    router.delete('/deleteById/:id', async (req, res) => {
+        try {
+        await Event.findByIdAndDelete(req.params.id);
+        res.status(204).json({
+          status: 'success',
+          data: null
+        })
+      }catch (err) {
+        res.status(400).json ({
+          status: 'fail',
+          message: 'Your data not gone guess its not deleted...🤨🤔🤨?'
+        })
+      }
+    })
 
 module.exports = router; // connecting to the router on the app.js file.

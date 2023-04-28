@@ -1,27 +1,61 @@
 const express = require('express');
+const Resource = require("../../models/resourceModel");
 const router = express.Router();
 
 
-router.get('/getAll', (req, res, next ) => { // getting the announcementRoutes key from the app.js file.
-    res.status(200).json({
-        message: 'Handling GET request to /resources'
-    });
-});
+router.post("/addResource", async (req, res) => {
+    try {
+      const newResources = await Resource.create(req.body)
+      res.status(201).json({
+        status: 'success',
+        data: {
+          resources: newResources
+        }
+      })
+    } catch (err) {
+      res.status(400).json ({
+        status: 'fail',
+        message: 'what do you mean by that🤨🤔🤨?', err
+      })
+    }
+  });
 
-router.post('/updateById', (req, res, next ) => {
-    res.status(201).json({
-        message: 'Handling POST request to /resources',
-    });
-});
-
-
-router.get('/getById/:resourcesId', (req, res, next) => {
-        res.status(200).json({
-            message: 'resources details',
-            newsLetterId: req.params.resourcesId
+router.get("/getAll", async (req, res, next) => {
+    // getting the resourcesRoutes key from the app.js file.
+    try {
+        const allResources = await Resource.find(req.body)
+        res.status(201).json({
+          status: 'success',
+          data: {
+            resources: allResources
+          }
         })
-})
+      } catch (err) {
+        res.status(400).json ({
+          status: 'fail',
+          message: err
+        })
+      }
+    });
 
+    
+    
+    router.get("/getById/:id", async (req, res) => {
+        try {
+            const ResourcesId = await Resource.findOne({id: req.params.id});
+            res.status(201).json({
+                status: 'success',
+                data: {
+                    resources: ResourcesId
+                }
+            })
+        } catch (err) {
+            res.status(400).json ({
+                status: 'fail',
+                message:  'what do you mean by that🤨🤔🤨?'
+            })
+        }
+    });
 
 
 router.delete('/deleteById/:resourcesId', (req, res, next) => {

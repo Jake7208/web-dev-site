@@ -23,11 +23,24 @@ router.get('/getAll', (req, res, next) => {
     
 })
 
-router.post('/updateById', (req, res, next ) => {
-    res.status(201).json({
-        message: 'Handling POST request to /newsLetter',
-    });
-});
+// router.get('/getById', (req, res, next) => {
+   
+//     const run = async () => {
+//         const {campaigns} = await client.campaigns.get();
+//         // console.log(response);
+//         return campaigns.map(a => a.long_archive_url)
+//     };
+//     run().then((e) => {
+//         console.log(e);
+//         res.status(200).json(e)
+//     });
+    
+// })
+// router.post('/updateById', (req, res, next ) => {
+//     res.status(201).json({
+//         message: 'Handling POST request to /newsLetter',
+//     });
+// });
 
 
 router.get('/getByNum/:newsLetterNum', (req, res, next) => {

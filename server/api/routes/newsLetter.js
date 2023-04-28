@@ -8,20 +8,26 @@ client.setConfig({
   server: "us5",
 });
 
+const run = async () => {
+    const response = await client.campaigns.list();
+    console.log(response);
+  };
+  
+  run();
 // gets all the links for the newsletters.
-router.get('/getAll', (req, res, next) => {
+// router.get('/getAll', (req, res, next) => {
    
-    const run = async () => {
-        const {campaigns} = await client.campaigns.list();
-        // console.log(response);
-        return campaigns.map(a => a.long_archive_url)
-    };
-    run().then((e) => {
-        console.log(e);
-        res.status(200).json(e)
-    });
+//     const run = async () => {
+//         const {campaigns} = await client.campaigns.list();
+//         // console.log(response);
+//         return campaigns.map(a => a.long_archive_url)
+//     };
+//     run().then((e) => {
+//         console.log(e);
+//         res.status(200).json(e)
+//     });
     
-})
+// })
 
 // router.get('/getById', (req, res, next) => {
    

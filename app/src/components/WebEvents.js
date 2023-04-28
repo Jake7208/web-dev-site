@@ -1,4 +1,5 @@
 import React from "react";
+import "./WebEvents.css";
 import useFetch from "../Hooks/useFetch";
 
 const WebEvents = () => {

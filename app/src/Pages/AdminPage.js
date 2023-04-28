@@ -5,7 +5,7 @@ const AdminPage = () => {
   return (
     <div className="container">
       <SideNavBar></SideNavBar>
-      <h1 className="admin">AdminPageAdminPage</h1>
+      <h1 className="admin">..............AdminPage..........</h1>
     </div>
   );
 };

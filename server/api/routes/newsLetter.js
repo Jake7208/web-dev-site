@@ -4,74 +4,46 @@ const router = express.Router();
 const client = require("@mailchimp/mailchimp_marketing");
 
 client.setConfig({
-  apiKey: "df09bcacec46d0ac6dae2a802f912102-us5",
+  apiKey: "5e8b6252140014270dcd74e4e79e61a5-us5",
   server: "us5",
 });
 
-const run = async () => {
-    const response = await client.campaigns.list();
-    console.log(response);
-  };
+// const run = async () => {
+//     const response = await client.campaigns.list();
+//     console.log(response);
+//   };
   
-  run();
+//   run();
 // gets all the links for the newsletters.
-// router.get('/getAll', (req, res, next) => {
+router.get('/getAll', (req, res, next) => {
    
-//     const run = async () => {
-//         const {campaigns} = await client.campaigns.list();
-//         // console.log(response);
-//         return campaigns.map(a => a.long_archive_url)
-//     };
-//     run().then((e) => {
-//         console.log(e);
-//         res.status(200).json(e)
-//     });
+    const run = async () => {
+        const {campaigns} = await client.campaigns.list();
+        // console.log(response);
+        const urls = campaigns.filter(campaign => campaign.long_archive_url.includes("web-mobile-development-newsletter-edition"));
+        return urls.map(a => a.long_archive_url);
+    };
+    run().then((e) => {
+        console.log(e);
+        res.status(200).json(e)
+    });
     
-// })
-
-// router.get('/getById', (req, res, next) => {
-   
-//     const run = async () => {
-//         const {campaigns} = await client.campaigns.get();
-//         // console.log(response);
-//         return campaigns.map(a => a.long_archive_url)
-//     };
-//     run().then((e) => {
-//         console.log(e);
-//         res.status(200).json(e)
-//     });
-    
-// })
-// router.post('/updateById', (req, res, next ) => {
-//     res.status(201).json({
-//         message: 'Handling POST request to /newsLetter',
-//     });
-// });
-
-
-router.get('/getByNum/:newsLetterNum', (req, res, next) => {
-        newsLetter.find(req.params.newsLetterNum).then((newsLetter) => {
-            if (!newsLetter) {
-                return res.status(404).send();
-            }    
-            res.send(newsLetter);
-        }).catch((error) => {
-            res.status(500).send(error);
-        })
-    })
-
-
-
-router.delete('/deleteById/:newsLetterId', (req, res, next) => {
-    const id = req.params.newsLetterId
-   if (id !== undefined) {
-        res.status(200).json({
-            message: `newsLetter id: ${id}; deleted`,
-            newsLetterId: id
-        })
-    }
 })
 
-
+router.get('/getLatest', (req, res, next) => {
+const run = async () => {
+    const { campaigns } = await client.campaigns.list();
+        const latestCampaign = campaigns
+            .filter(campaign => campaign.send_time)
+            .sort((a, b) => new Date(b.send_time) - new Date(a.send_time))[0];
+            return latestCampaign ? { 
+                url: latestCampaign.long_archive_url
+            } : null;
+        };
+    run().then((result) => {
+        console.log(result);
+        res.status(200).json(result)
+    }); 
+})
 
 module.exports = router; // connecting to the router on the app.js file.

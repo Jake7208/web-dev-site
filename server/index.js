@@ -64,6 +64,7 @@ mongoose
   },)
   .then(() => console.log("DB connection successful!"));
 
+  
 //  const testAnnouncement = new Announcement({
 //   id: 2,
 //   title: 'an1a',

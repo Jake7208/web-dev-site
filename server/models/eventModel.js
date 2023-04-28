@@ -5,9 +5,9 @@ const router = express.Router();
 
 
 const eventSchema = new mongoose.Schema({
-    title: {
+  title: {
       type: String,
-      required: [true, 'event must have a title!']
+      required: [true, 'event must have a title!'],
     },
     description: {
       type: String,

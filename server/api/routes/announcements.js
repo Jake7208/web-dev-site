@@ -14,7 +14,7 @@ router.post("/add", async (req, res) => {
   } catch (err) {
     res.status(400).json ({
       status: 'fail',
-      message: 'what do you mean by that🤨🤔🤨?', err
+      message:  err
     })
   }
 });
@@ -59,7 +59,7 @@ router.patch("/updateById/:id", async (req, res) => {
   try {
     const AnnouncementId = await Announcement.findByIdAndUpdate(req.params.id, req.body, {
       new: true,
-      runValidators: true
+      // runValidators: true
     });
     res.status(200).json({
       status: 'success',

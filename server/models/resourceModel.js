@@ -6,7 +6,7 @@ const router = express.Router();
 const resourceSchema = new mongoose.Schema({
     title: {
       type: String,
-      required: [true, 'resource must have a title!']
+      required: [true, 'resource must have a title!'],
     },
     description: {
       type: String,

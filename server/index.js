@@ -9,8 +9,9 @@ require("dotenv").config();
 
 app.use(cors({
   origin: '*'
-}
-))
+}))
+
+
 
 const announcementRoutes = require("./api/routes/announcements");
 const eventRoute = require("./api/routes/events");

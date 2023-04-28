@@ -1,10 +1,13 @@
 import React from "react";
+import "./NewsLetter.css";
 import useFetch from "../Hooks/useFetch";
 
 const NewsLetter = () => {
   const { data: posts, error } = useFetch(
-    `${process.env.REACT_APP_BACKEND_URL}/newsLetter/getNewsLetter`
+    `${process.env.REACT_APP_BACKEND_URL}/newsLetter/getAll`
   );
+
+  // console.log(posts);
 
   if (!posts && !error) {
     return <p>Loading...</p>;
@@ -20,12 +23,10 @@ const NewsLetter = () => {
 
   return (
     <div className="newsletter">
-      {posts.map((post) => {
+      {posts.map((url, i) => {
         return (
-          <div key={post.id}>
-            <h2>{post.number}</h2>
-            <p>{post.title}</p>
-            <p>{post.date}</p>
+          <div key={`key${i}`}>
+            <p>{url}</p>
           </div>
         );
       })}

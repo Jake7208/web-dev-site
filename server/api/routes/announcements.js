@@ -2,7 +2,7 @@ const express = require("express");
 const Announcement = require("../../models/announcementModel");
 const router = express.Router();
 
-router.post("/addAnnouncement", async (req, res) => {
+router.post("/add", async (req, res) => {
   try {
     const newAnnouncement = await Announcement.create(req.body)
     res.status(201).json({

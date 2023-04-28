@@ -3,7 +3,7 @@ const Resource = require("../../models/resourceModel");
 const router = express.Router();
 
 
-router.post("/addResource", async (req, res) => {
+router.post("/add", async (req, res) => {
     try {
       const newResources = await Resource.create(req.body)
       res.status(201).json({

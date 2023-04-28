@@ -4,7 +4,7 @@ const router = express.Router();
 
 
 // add events getting from database working
-router.post("/addEvent", async (req, res) => {
+router.post("/add", async (req, res) => {
     try {
       const newEvent = await Event.create(req.body)
       res.status(201).json({

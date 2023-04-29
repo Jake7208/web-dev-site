@@ -64,20 +64,6 @@ mongoose
   },)
   .then(() => console.log("DB connection successful!"));
 
-  
-//  const testAnnouncement = new Announcement({
-//   id: 2,
-//   title: 'an1a',
-//   description: 'an1a',
-//   date: '2002-10-9'
-//  })
-
-//  testAnnouncement.save().then(doc => {
-//   console.log(doc);
-//  }).catch(err => {
-//   console.log('Error hold this L 🤨:', err);
-//  })
-
 // connection to port 8080
 const port = process.env.PORT || 8080;
 

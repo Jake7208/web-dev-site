@@ -22,7 +22,12 @@ router.post("/add", async (req, res) => {
 router.get("/getAll", async (req, res, next) => {
   // getting the announcementRoutes key from the app.js file.
   try {
-      console.log(req.query);
+      const queryObj = {...req.query}
+      const excludedFields = ['page', 'sort', 'limit', 'fields'];
+      excludedFields.forEach(el => delete queryObj[el])      
+      console.log(req.query, queryObj);
+
+
       const allAnnouncement = await Announcement.find(req.body)
       res.status(201).json({
         status: 'success',

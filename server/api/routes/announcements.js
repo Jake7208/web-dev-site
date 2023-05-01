@@ -22,13 +22,20 @@ router.post("/add", async (req, res) => {
 router.get("/getAll", async (req, res, next) => {
   // getting the announcementRoutes key from the app.js file.
   try {
+    // build query
       const queryObj = {...req.query}
       const excludedFields = ['page', 'sort', 'limit', 'fields'];
       excludedFields.forEach(el => delete queryObj[el])      
       console.log(req.query, queryObj);
+      const query = Announcement.find(queryObj)
 
+      
+      // { duration: '5', difficulty: 'easy' } { duration: '5', difficulty: 'easy' }
 
-      const allAnnouncement = await Announcement.find(req.body)
+    // execute query
+      const allAnnouncement = await query;
+
+      // send response
       res.status(201).json({
         status: 'success',
         data: {
@@ -38,7 +45,7 @@ router.get("/getAll", async (req, res, next) => {
     } catch (err) {
       res.status(400).json ({
         status: 'fail',
-        message: 'what do you mean by that🤨🤔🤨?', err
+        message: err
       })
     }
   });

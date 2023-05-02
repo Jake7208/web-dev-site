@@ -22,12 +22,12 @@ const SideNavBar = () => {
     {
       text: "Newsletter",
       //icon: "../../public/icons/article.png",
-      icon: <BiNews />,
+      icon: <BiNews className="menu-item-icon" />,
     },
     {
       text: "Videos",
       //icon: "../../public/icons/video.png",
-      icon: <FiVideo />,
+      icon: <FiVideo className="menu-item-icon" />,
     },
   ];
   return (
@@ -43,9 +43,7 @@ const SideNavBar = () => {
           <div className="nav-heading">
             <div className="nav-brand">
               <h2>Web & Mobile Development</h2>
-              <Link to="/">
-                <img src="icons/btech3.png" alt="nav brand" />
-              </Link>
+              <img src="icons/btech3.png" alt="nav brand" />
             </div>
 
             <button

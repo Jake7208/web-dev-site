@@ -2,10 +2,11 @@ const express = require('express');
 const router = express.Router();
 //  connecting to the mailchimp api
 const client = require("@mailchimp/mailchimp_marketing");
+require("dotenv").config();
 
 client.setConfig({
-  apiKey: "5e8b6252140014270dcd74e4e79e61a5-us5",
-  server: "us5",
+  apiKey: process.env.MAILCHIMP_API,
+  server: process.env.MAILCHIMP_LOCATION,
 });
 
 // const run = async () => {
@@ -37,8 +38,12 @@ const run = async () => {
             .filter(campaign => campaign.send_time)
             .sort((a, b) => new Date(b.send_time) - new Date(a.send_time))[0];
             return latestCampaign ? { 
-                url: latestCampaign.long_archive_url
-            } : null;
+                status: "success",
+                data: latestCampaign.long_archive_url
+            } : {
+                status: "fail",
+                data: new Error("Couldn't find latest newsletter")
+            };
         };
     run().then((result) => {
         console.log(result);

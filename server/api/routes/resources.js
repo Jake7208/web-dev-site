@@ -16,9 +16,7 @@ router.post("/add", async (req, res) => {
     const newResources = await Resource.create(req.body)
     res.status(201).json({
       status: 'success',
-      data: {
-        resources: newResources
-      }
+      data: newResources
     })
   } catch (err) {
     res.status(400).json ({
@@ -34,9 +32,8 @@ router.get("/getAll", async (req, res, next) => {
         const allResources = await Resource.find(req.body)
         res.status(201).json({
           status: 'success',
-          data: {
-            resources: allResources
-          }
+          data: allResources
+  
         })
       } catch (err) {
         res.status(400).json ({
@@ -53,9 +50,7 @@ router.get("/getAll", async (req, res, next) => {
             const ResourcesId = await Resource.findById(req.params.id);
             res.status(201).json({
                 status: 'success',
-                data: {
-                    resources: ResourcesId
-                }
+                data: ResourcesId
             })
         } catch (err) {
             res.status(400).json ({
@@ -74,9 +69,7 @@ router.get("/getAll", async (req, res, next) => {
         });
         res.status(200).json({
           status: 'success',
-          data: {
-            resources: resourcesId
-          }
+          data: resourcesId
         })
       }catch (err) {
         res.status(400).json ({

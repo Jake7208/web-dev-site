@@ -8,9 +8,7 @@ router.post("/add", async (req, res) => {
     const newAnnouncement = await Announcement.create(req.body)
     res.status(201).json({
       status: 'success',
-      data: {
-        announcement: newAnnouncement
-      }
+      data: newAnnouncement
     })
   } catch (err) {
     res.status(400).json ({
@@ -44,9 +42,8 @@ router.get("/getAll", async (req, res, next) => {
       // send response
       res.status(201).json({
         status: 'success',
-        data: {
-          announcement: allAnnouncement
-        }
+        data: allAnnouncement
+      
       })
     } catch (err) {
       res.status(400).json ({
@@ -62,9 +59,8 @@ router.get("/getById/:id", async (req, res) => {
     const AnnouncementId = await Announcement.findById(req.params.id);
     res.status(201).json({
       status: 'success',
-      data: {
-        announcement: AnnouncementId
-      }
+      data: AnnouncementId
+
     })
   } catch (err) {
     res.status(400).json ({
@@ -82,9 +78,7 @@ router.patch("/updateById/:id", async (req, res) => {
     });
     res.status(200).json({
       status: 'success',
-      data: {
-        announcement: AnnouncementId
-      }
+      data: AnnouncementId
     })
   }catch (err) {
     res.status(400).json ({

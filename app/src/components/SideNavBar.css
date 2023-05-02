@@ -1,5 +1,7 @@
 /* NX = not expanded */
 
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
 .side-nav-container {
 	width: 300px;
 	height: 100vh;
@@ -47,6 +49,10 @@
 	padding-top: 15px;
 }
 
+.nav-brand h2 {
+	font-family: "Roboto";
+	font-size: 27px;
+}
 .hamburger {
 	background: none;
 	border: none;
@@ -113,6 +119,8 @@
 	display: flex;
 	color: var(--light);
 	text-decoration: none;
+	font-family: "Roboto";
+	font-size: large;
 	text-transform: uppercase;
 	border-radius: 10px;
 	align-items: center;
@@ -127,7 +135,8 @@
 	display: flex;
 	color: var(--light);
 	text-decoration: none;
-	font-size: medium;
+	font-family: "Roboto";
+	font-size: large;
 	text-transform: uppercase;
 	border-radius: 10px;
 	align-items: center;

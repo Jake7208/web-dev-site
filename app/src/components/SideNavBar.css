@@ -1,5 +1,7 @@
 /* NX = not expanded */
 
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
 .side-nav-container {
 	width: 300px;
 	height: 100vh;
@@ -43,10 +45,14 @@
 }
 .nav-brand img {
 	height: 75px;
-	width: 85px;
+	width: 75px;
 	padding-top: 15px;
 }
 
+.nav-brand h2 {
+	font-family: "Roboto";
+	font-size: 27px;
+}
 .hamburger {
 	background: none;
 	border: none;
@@ -113,6 +119,8 @@
 	display: flex;
 	color: var(--light);
 	text-decoration: none;
+	font-family: "Roboto";
+	font-size: large;
 	text-transform: uppercase;
 	border-radius: 10px;
 	align-items: center;
@@ -127,13 +135,15 @@
 	display: flex;
 	color: var(--light);
 	text-decoration: none;
-	font-size: medium;
+	font-family: "Roboto";
+	font-size: large;
 	text-transform: uppercase;
 	border-radius: 10px;
 	align-items: center;
 	justify-content: space-between;
 	background-color: #1a212b;
 	padding: 0 1rem;
+	cursor: pointer;
 }
 
 .menu-item:hover {
@@ -194,7 +204,7 @@
 	padding: 10px;
 	margin: 18px 5px 5px 0px;
 	color: var(--light);
-	border-radius: 20px;
+	border-radius: 10px;
 }
 .logout-icon:hover {
 	background-color: #cf142b;
@@ -204,12 +214,19 @@
 	margin-left: 15px;
 }
 
-/*.dropdown-options-container {
-	position: absolute;
-	overflow: auto;
-	max-height: fit-content;
-}
+/* .dropdown-options-container {
+} */
 
 .dropdown-options {
-	position: relative;
-}*/
+	line-height: 30px;
+	cursor: pointer;
+}
+.dropdown-options:hover {
+	/* background: #cf3849; */
+	/* background: #960e1e; */
+	border-radius: 5px;
+	border: 3px solid #cf142b;
+}
+.dropdown-options-container {
+	list-style: none;
+}

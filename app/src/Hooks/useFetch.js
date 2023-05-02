@@ -52,7 +52,11 @@ function useFetch(url, options) {
         cache.current[url] = data;
         if (cancelRequest.current) return;
 
-        dispatch({ type: "fetched", payload: data });
+        if (data.status === "fail") {
+          throw new Error(data.data);
+        }
+
+        dispatch({ type: "fetched", payload: data.data });
       } catch (error) {
         if (cancelRequest.current) return;
 

@@ -3,13 +3,13 @@ import "./NewsLetter.css";
 import useFetch from "../Hooks/useFetch";
 
 const NewsLetter = () => {
-  const { data: posts, error } = useFetch(
+  const { data: postURL, error } = useFetch(
     `${process.env.REACT_APP_BACKEND_URL}/newsLetter/getLatest`
   );
 
-  // console.log(posts);
+  console.log(postURL, error);
 
-  if (!posts && !error) {
+  if (!postURL && !error) {
     return <p>Loading...</p>;
   }
 
@@ -17,19 +17,11 @@ const NewsLetter = () => {
     return <p>Error: {error.message}</p>;
   }
 
-  if (!Array.isArray(posts)) {
-    return <p>Got: {posts.toString()}; expected Array.</p>;
-  }
-
   return (
     <div className="newsletter">
-      {posts.map((url, i) => {
-        return (
-          <div key={`key${i}`}>
-            <p>{url}</p>
-          </div>
-        );
-      })}
+      <div>
+        <iframe src={postURL}></iframe>
+      </div>
     </div>
   );
 };

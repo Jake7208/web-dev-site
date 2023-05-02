@@ -6,15 +6,17 @@ import SchoolCalendar from "./components/SchoolCalendar";
 import WebEvents from "./components/WebEvents";
 
 function App() {
-  return (
-    <div className="row">
-      <SideNavBar />
-      <AnnouncementBanner />
-      <NewsLetter />
-      <SchoolCalendar />
-      <WebEvents />
-    </div>
-  );
+	return (
+		<div>
+			<SideNavBar />
+			<div className="row">
+				<AnnouncementBanner />
+				<NewsLetter />
+				<SchoolCalendar />
+				<WebEvents />
+			</div>
+		</div>
+	);
 }
 
 export default App;

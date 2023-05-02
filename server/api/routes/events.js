@@ -10,14 +10,12 @@ router.post("/add", async (req, res) => {
       const newEvent = await Event.create(req.body)
       res.status(201).json({
         status: 'success',
-        data: {
-          event: newEvent
-        }
+        data:  newEvent
       })
     } catch (err) {
       res.status(400).json ({
         status: 'fail',
-        message: err
+        data: err
       })
     }
   });
@@ -26,20 +24,20 @@ router.get("/getAll", async (req, res, next) => {
     // getting the eventRoutes key from the app.js file.
     try {
         const allEvents = await Event.find(req.body)
+        // const string = JSON.stringify (allEvents)
         res.status(201).json({
           status: 'success',
-          data: {
-            event: allEvents
-          }
+          data: allEvents
         })
+        // const jsonString = JSON.stringify(res);
+        // console.log(jsonString);
       } catch (err) {
         res.status(400).json ({
           status: 'fail',
-          message: err
+          data: err
         })
       }
     });
-
     
     
     router.get("/getById/:id", async (req, res) => {
@@ -47,14 +45,12 @@ router.get("/getAll", async (req, res, next) => {
             const EventId = await Event.findById(req.params.id);;
             res.status(201).json({
                 status: 'success',
-                data: {
-                    event: EventId
-                }
-            })
+                data: EventId
+              })
         } catch (err) {
             res.status(400).json ({
                 status: 'fail',
-                message:  'what do you mean by that🤨🤔🤨?'
+                data:  'what do you mean by that🤨🤔🤨?'
             })
         }
     });
@@ -67,14 +63,12 @@ router.get("/getAll", async (req, res, next) => {
         });
         res.status(200).json({
           status: 'success',
-          data: {
-            event: EventId
-          }
+          data: EventId
         })
       }catch (err) {
         res.status(400).json ({
           status: 'fail',
-          message: err //'what do you mean by that🤨🤔🤨?'
+          data: err //'what do you mean by that🤨🤔🤨?'
         })
       }
     })
@@ -89,7 +83,7 @@ router.get("/getAll", async (req, res, next) => {
       }catch (err) {
         res.status(400).json ({
           status: 'fail',
-          message: 'Your data not gone guess its not deleted...🤨🤔🤨?'
+          data: 'Your data not gone guess its not deleted...🤨🤔🤨?'
         })
       }
     })

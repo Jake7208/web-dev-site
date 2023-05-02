@@ -10,7 +10,7 @@
 	transform: translateX(0px);
 }
 .side-nav-container-NX {
-	transform: translateX(-230px);
+	transform: translateX(-215px);
 }
 
 .side-nav-box {
@@ -27,8 +27,6 @@
 .nav-menu,
 .menu-item,
 .nav-footer {
-	/* border: 2px solid white; */
-	/* display: grid; */
 	background-color: #1a212b;
 }
 
@@ -41,11 +39,12 @@
 .nav-brand {
 	display: flex;
 	color: var(--light);
+	padding-top: 20px;
 }
 .nav-brand img {
 	height: 75px;
 	width: 85px;
-	padding: 15px 5px;
+	padding-top: 15px;
 }
 
 .hamburger {
@@ -149,8 +148,8 @@
 
 .link-icon {
 	display: flex;
-	height: 30px;
-	width: 30px;
+	height: 40px;
+	width: 40px;
 }
 
 .menu-item-icon {
@@ -175,9 +174,16 @@
 	padding: 0 20px;
 }
 
+.nav-footer {
+	padding-bottom: 30px;
+}
+.nav-footer-info {
+	padding-right: 22px;
+}
+
 .nav-footer-user-name {
 	font-size: 18px;
-	font-weight: 900;
+	font-weight: 700;
 }
 
 .nav-footer-user-position {
@@ -185,14 +191,15 @@
 	color: var(--gray);
 }
 .logout-icon {
-	width: 30px;
-	margin: auto;
-	border-radius: 90px;
-	padding: 20px;
-	margin-left: 5px;
+	width: 40px;
+	height: 30px;
+	padding: 10px;
+	margin: 18px 5px 5px 0px;
+	color: var(--light);
+	border-radius: 20px;
 }
 .logout-icon:hover {
-	background-color: var(--primary);
+	background-color: #cf142b;
 }
 
 .chev {

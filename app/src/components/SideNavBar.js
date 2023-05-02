@@ -4,6 +4,7 @@ import { Listbox } from "@headlessui/react";
 import "./SideNavBar.css";
 import { BiLink, BiNews } from "react-icons/bi";
 import { FiVideo } from "react-icons/fi";
+import { GiLockedFortress } from "react-icons/gi";
 
 const SideNavBar = () => {
 	const dropdownMenu = [
@@ -80,7 +81,7 @@ const SideNavBar = () => {
 								href="#"
 							>
 								<p>{link.text}</p>
-								<img className="menu-item-icon" src={link.icon} alt="" srcSet="" />
+								{link.icon}
 							</a>
 						))}
 					</div>
@@ -96,12 +97,11 @@ const SideNavBar = () => {
 						<div className="nav-footer-info">
 							<p className="nav-footer-user-name">UserName</p>
 							<p className="nav-footer-user-position">Admin Login</p>
-						</div>
+						</div>{" "}
+						<Link to="/AdminPage">
+							<GiLockedFortress className="logout-icon" />
+						</Link>
 					</div>
-
-					<Link to="/AdminPage">
-						<img className="logout-icon" src="icons/logout.svg" alt="" srcset=""></img>
-					</Link>
 				</div>
 			</div>
 		</div>

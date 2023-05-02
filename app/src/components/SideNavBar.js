@@ -21,10 +21,12 @@ const SideNavBar = () => {
 	const menuItems = [
 		{
 			text: "Newsletter",
+			//icon: "../../public/icons/article.png",
 			icon: <BiNews />,
 		},
 		{
 			text: "Videos",
+			//icon: "../../public/icons/video.png",
 			icon: <FiVideo />,
 		},
 	];

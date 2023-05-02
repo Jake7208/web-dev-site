@@ -43,7 +43,9 @@ const SideNavBar = () => {
           <div className="nav-heading">
             <div className="nav-brand">
               <h2>Web & Mobile Development</h2>
-              <img src="icons/btech3.png" alt="nav brand" />
+              <Link to="/">
+                <img src="icons/btech3.png" alt="nav brand" />
+              </Link>
             </div>
 
             <button

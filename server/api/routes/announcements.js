@@ -1,5 +1,6 @@
 const express = require("express");
 const Announcement = require("../../models/announcementModel");
+const { json } = require("body-parser");
 const router = express.Router();
 
 router.post("/add", async (req, res) => {
@@ -23,13 +24,18 @@ router.get("/getAll", async (req, res, next) => {
   // getting the announcementRoutes key from the app.js file.
   try {
     // build query
+    // 1) Filtering
       const queryObj = {...req.query}
       const excludedFields = ['page', 'sort', 'limit', 'fields'];
       excludedFields.forEach(el => delete queryObj[el])      
-      console.log(req.query, queryObj);
-      const query = Announcement.find(queryObj)
+      // console.log(req.query, queryObj);
 
+    // 2) advanced filtering
+      let queryStr = JSON.stringify(queryObj);
+      queryStr = queryStr.replace(/\b{gte|gt|lte|lt}\b/g, match => `$${match}`)
+      console.log(JSON.parse(queryStr));
       
+      const query = Announcement.find(JSON.parse(queryStr));
       // { duration: '5', difficulty: 'easy' } { duration: '5', difficulty: 'easy' }
 
     // execute query

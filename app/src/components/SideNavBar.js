@@ -22,12 +22,12 @@ const SideNavBar = () => {
 		{
 			text: "Newsletter",
 			//icon: "../../public/icons/article.png",
-			icon: <BiNews />,
+			icon: <BiNews className="menu-item-icon" />,
 		},
 		{
 			text: "Videos",
 			//icon: "../../public/icons/video.png",
-			icon: <FiVideo />,
+			icon: <FiVideo className="menu-item-icon" />,
 		},
 	];
 	return (

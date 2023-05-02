@@ -145,19 +145,14 @@
 }
 
 .link-icon {
-	display: flex;
+	/* display: flex; */
 	height: 40px;
 	width: 40px;
 }
 
-/* .menu-item-icon {
-	height: 40px;
-	width: 40px;
-} */
-
 .menu-item-icon {
-	height: 30px;
-	width: 30px;
+	height: 35px;
+	width: 35px;
 }
 
 .nav-footer {

@@ -143,6 +143,7 @@
 	justify-content: space-between;
 	background-color: #1a212b;
 	padding: 0 1rem;
+	cursor: pointer;
 }
 
 .menu-item:hover {
@@ -203,7 +204,7 @@
 	padding: 10px;
 	margin: 18px 5px 5px 0px;
 	color: var(--light);
-	border-radius: 20px;
+	border-radius: 10px;
 }
 .logout-icon:hover {
 	background-color: #cf142b;
@@ -213,12 +214,19 @@
 	margin-left: 15px;
 }
 
-/*.dropdown-options-container {
-	position: absolute;
-	overflow: auto;
-	max-height: fit-content;
-}
+/* .dropdown-options-container {
+} */
 
 .dropdown-options {
-	position: relative;
-}*/
+	line-height: 30px;
+	cursor: pointer;
+}
+.dropdown-options:hover {
+	/* background: #cf3849; */
+	/* background: #960e1e; */
+	border-radius: 5px;
+	border: 3px solid #cf142b;
+}
+.dropdown-options-container {
+	list-style: none;
+}

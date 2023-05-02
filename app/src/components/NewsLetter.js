@@ -4,7 +4,7 @@ import useFetch from "../Hooks/useFetch";
 
 const NewsLetter = () => {
   const { data: posts, error } = useFetch(
-    `${process.env.REACT_APP_BACKEND_URL}/newsLetter/getAll`
+    `${process.env.REACT_APP_BACKEND_URL}/newsLetter/getLatest`
   );
 
   // console.log(posts);

@@ -1,6 +1,9 @@
+const { promisify } = require('util');
 const jwt = require('jsonwebtoken')
 const express = require("express");
 const Admin = require('../../models/userModel');
+const utils = require('../../utils/appError');
+const AppError = require('../../utils/appError');
 const router = express.Router();
 
 const signToken = id => {
@@ -73,14 +76,15 @@ router.protect = async (req, res, next) =>  {
         if (req.headers.authorization && req.headers.authorization.startsWith('Bearer')){
             token = req.headers.authorization.split(' ')[1]
         }
-        // 2) verification token
-        jwt.verify(token, process.env.JWT_SECRET)
         if(!token) {
-            return next(res.status(401).json({
-                status: 'fail',
-                data: 'Unauthorized please login to gain access'
-            }))
+            return next (
+                new AppError('Unauthorized please login to gain access', 401)
+            )
         }
+        // 2) verification token
+       const decoded = await promisify(jwt.verify)(token, process.env.JWT_SECRET)
+       console.log(decoded);
+        // }
 
         // 3) check if user still exist
     

@@ -5,7 +5,7 @@ const auth = require('./auth')
 
 
 // add events getting from database working
-router.post("/add", async (req, res) => {
+router.post("/add", auth.protect, async (req, res) => {
     try {
       const newEvent = await Event.create(req.body)
       res.status(201).json({
@@ -20,7 +20,7 @@ router.post("/add", async (req, res) => {
     }
   });
 
-router.get("/getAll", auth.protect, async (req, res, next) => {
+router.get("/getAll", async (req, res, next) => {
     // getting the eventRoutes key from the app.js file.
     try {
         const allEvents = await Event.find(req.body)
@@ -55,7 +55,7 @@ router.get("/getAll", auth.protect, async (req, res, next) => {
         }
     });
 
-    router.patch("/updateById/:id", async (req, res) => {
+    router.patch("/updateById/:id", auth.protect, async (req, res) => {
       try {
         const EventId = await Event.findByIdAndUpdate(req.params.id, req.body, {
           new: true,
@@ -73,7 +73,7 @@ router.get("/getAll", auth.protect, async (req, res, next) => {
       }
     })
 
-    router.delete('/deleteById/:id', async (req, res) => {
+    router.delete('/deleteById/:id', auth.protect, async (req, res) => {
         try {
         await Event.findByIdAndDelete(req.params.id);
         res.status(204).json({

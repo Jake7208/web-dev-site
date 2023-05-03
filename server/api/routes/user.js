@@ -1,8 +1,9 @@
 const express = require('express');
 const Admin = require("../../models/userModel");
+const { protect } = require('./auth');
 const router = express.Router();
 
-router.get("/getAll", async (req, res, next) => {
+router.get("/getAll", protect, async (req, res, next) => {
     // getting the AdminRoutes key from the app.js file.
     try {
         const allAdmins = await Admin.find(req.body)

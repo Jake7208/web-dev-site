@@ -220,6 +220,9 @@
 .dropdown-options {
 	line-height: 30px;
 	cursor: pointer;
+	display: flex;
+	justify-content: space-between;
+	padding-right: 25px;
 }
 .dropdown-options:hover {
 	/* background: #cf3849; */
@@ -230,3 +233,8 @@
 .dropdown-options-container {
 	list-style: none;
 }
+/*inside <a>*/
+/* .submenu-icon {
+	width: 20px;
+	height: 20px;
+} */

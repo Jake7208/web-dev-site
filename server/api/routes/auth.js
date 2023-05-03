@@ -64,4 +64,33 @@ router.post("/login", async(req, res, next) => {
     })
 }
 })
+
+router.protect = async (req, res, next) =>  {
+    try{
+        
+        //  1) getting token and check if it's there
+        let token
+        if (req.headers.authorization && req.headers.authorization.startsWith('Bearer')){
+            token = req.headers.authorization.split(' ')[1]
+        }
+        // 2) verification token
+        jwt.verify(token, process.env.JWT_SECRET)
+        if(!token) {
+            return next(res.status(401).json({
+                status: 'fail',
+                data: 'Unauthorized please login to gain access'
+            }))
+        }
+
+        // 3) check if user still exist
+    
+        // 4) check if user changed password after the token was issued
+        next()
+    } catch (err) {
+        res.status(400).json ({
+          status: 'fail',
+          data: err
+    })
+}
+}
 module.exports = router; // connecting to the router on the index.js file.

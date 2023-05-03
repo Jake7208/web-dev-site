@@ -1,6 +1,7 @@
 const express = require('express');
 const Event = require("../../models/eventModel");
 const router = express.Router();
+const auth = require('./auth')
 
 
 // add events getting from database working
@@ -19,7 +20,7 @@ router.post("/add", async (req, res) => {
     }
   });
 
-router.get("/getAll", async (req, res, next) => {
+router.get("/getAll", auth.protect, async (req, res, next) => {
     // getting the eventRoutes key from the app.js file.
     try {
         const allEvents = await Event.find(req.body)

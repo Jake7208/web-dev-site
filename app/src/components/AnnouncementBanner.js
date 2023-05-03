@@ -22,6 +22,7 @@ const AnnouncementBanner = () => {
 
 	return (
 		<div className={classes.banner}>
+			<h3 className={classes.announcements}>Announcements</h3>
 			{posts.map((post) => {
 				return (
 					<div key={post.id}>

@@ -18,7 +18,8 @@ const NewsLetter = () => {
 	}
 
 	return (
-		<div className={classes.newsletter}>
+		<div className={classes.newscontainer}>
+			<h3 className={classes.newsletter}>Newsletter</h3>
 			<div>
 				<iframe src={postURL} className={classes.news}></iframe>
 			</div>

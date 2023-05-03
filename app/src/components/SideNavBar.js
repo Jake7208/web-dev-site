@@ -1,20 +1,26 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Listbox } from "@headlessui/react";
-import "./SideNavBar.css";
+
 import { BiLink, BiNews } from "react-icons/bi";
 import { FiVideo } from "react-icons/fi";
 import { GiLockedFortress } from "react-icons/gi";
+import { FaRegUser } from "react-icons/fa";
+import { ImBooks } from "react-icons/im";
+import { BsDiscord, BsGithub } from "react-icons/bs";
+import { CgFigma } from "react-icons/cg";
+import { SiVisualstudiocode } from "react-icons/si";
+
+import "./SideNavBar.css";
 
 const SideNavBar = () => {
 	const dropdownMenu = [
-		{ name: "Student Portal" },
-		{ name: "Canvas" },
-		{ name: "Discord" },
-		{ name: "GitHub" },
-		{ name: "Figma" },
-		{ name: "VS Code" },
-		{ name: "Font Awesome" },
+		{ name: "Student Portal", icon: <ImBooks className="submenu-icon" /> },
+		{ name: "Canvas", icon: <FaRegUser className="submenu-icon" /> },
+		{ name: "Discord", icon: <BsDiscord className="submenu-icon" /> },
+		{ name: "GitHub", icon: <BsGithub className="submenu-icon" /> },
+		{ name: "Figma", icon: <CgFigma className="submenu-icon" /> },
+		{ name: "VS Code", icon: <SiVisualstudiocode className="submenu-icon" /> },
 	];
 	const [selected, setSelected] = useState(dropdownMenu[0]);
 	const [isExpanded, setExpandState] = useState(false);
@@ -74,6 +80,7 @@ const SideNavBar = () => {
 										disabled={link.unavailable}
 									>
 										<a href={link.href}>{link.name}</a>
+										{link.icon}
 									</Listbox.Option>
 								))}
 							</Listbox.Options>

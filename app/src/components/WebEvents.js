@@ -21,6 +21,7 @@ const WebEvents = () => {
 
 	return (
 		<div className={classes.newsletter}>
+			<h3 className={classes.events}>Web Events</h3>
 			{posts.map((post) => {
 				return (
 					<div key={post.id}>

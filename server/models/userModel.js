@@ -26,7 +26,8 @@ const AdminSchema = new mongoose.Schema({
         type: String,
         required: [true, 'Please provide a password'],
         minlength: 8,
-        validate: [passwordValidator, 'Invalid password']
+        validate: [passwordValidator, 'Invalid password'],
+        select: false
     },
     passwordConfirm: {
         type: String,
@@ -38,11 +39,6 @@ const AdminSchema = new mongoose.Schema({
             },
             message: "Passwords do not match"
         }
-    },
-    role: {
-        type: String,
-        required: true,
-        default: 'admin'
     }
 });
 
@@ -56,7 +52,12 @@ AdminSchema.pre('save', async function(next) {
     // Delete password from field
     this.passwordConfirm = undefined;
     next();
-}) 
+});
+
+// instance method
+AdminSchema.methods.correctPassword = async function(candidatePassword, userPassword) {
+    return await bcrypt.compare(candidatePassword, userPassword)
+}
 
 const Admin = mongoose.model('Admin', AdminSchema);
 module.exports = Admin

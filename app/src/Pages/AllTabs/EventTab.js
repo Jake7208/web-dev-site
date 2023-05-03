@@ -1,4 +1,6 @@
 import React from "react";
+import "./event.css";
+
 const EventTab = () => {
   return (
     <div className="EventTab">

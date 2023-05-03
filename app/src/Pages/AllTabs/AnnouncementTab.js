@@ -1,4 +1,6 @@
 import React from "react";
+import "./announcement.css";
+
 const AnnouncementTab = () => {
   return (
     <div className="FirstTab">

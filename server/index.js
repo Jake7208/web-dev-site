@@ -16,6 +16,7 @@ const eventRoute = require("./api/routes/events");
 const resourceRoute = require("./api/routes/resources");
 const newsLetterRoute = require("./api/routes/newsLetter");
 const videoRoute = require("./api/routes/videos");
+const authRoute = require("./api/routes/auth")
 
 app.get("/", (req, res) => {
   res.send("Express JS on Vercel");
@@ -34,6 +35,7 @@ app.use("/api/events", eventRoute);
 app.use("/api/resources", resourceRoute);
 app.use("/api/newsLetter", newsLetterRoute);
 app.use("/api/videos", videoRoute);
+app.use("/api/auth", authRoute)
 
 
 

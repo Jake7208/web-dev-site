@@ -1,14 +1,21 @@
-const Admin = require('../../models/userModel');
-const catchAsync = require('../../utils/catchAsync')
 const express = require("express");
-const { json } = require("body-parser");
+const Admin = require('../../models/userModel');
 const router = express.Router();
 
-exports.signup = catchAsync(async (req, res, next) => {
-    const newAdmin = await Admin.create(req.body);
+router.post("/signUp", (async (req, res, next) => {
+    try{
+        const newAdmin = await Admin.create(req.body);
+    
+        res.status(201).json({
+            status: 'success',
+            data: newAdmin
+        })
+    } catch (err) {
+        res.status(400).json ({
+          status: 'fail',
+          data: err
+        })
+    }
+}))
 
-    res.status(201).json({
-        status: 'success',
-        data: newAdmin
-    })
-})
+module.exports = router; // connecting to the router on the index.js file.

@@ -4,8 +4,7 @@ import "./resource.css";
 const ResourceTab = () => {
   return (
     <div className="ResourceTab">
-      <p>Third Tab!!!!!!!!!</p>
-      {/* tab content will go here */}
+      <p>Add all your resource pages here!!!!</p>
     </div>
   );
 };

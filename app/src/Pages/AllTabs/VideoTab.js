@@ -4,8 +4,7 @@ import "./video.css";
 const VideoTab = () => {
   return (
     <div className="VideoTab">
-      <p>Videos!!!!!!!!!</p>
-      {/* tab content will go here */}
+      <p>YT Videos!!!!!!!!!</p>
     </div>
   );
 };

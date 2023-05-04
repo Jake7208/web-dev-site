@@ -4,8 +4,7 @@ import "./announcement.css";
 const AnnouncementTab = () => {
   return (
     <div className="FirstTab">
-      <p>First Tab!! Hurray!!</p>
-      {/* First tab content will go here */}
+      <p>You can do all your announcement changes here!!!!!!</p>
     </div>
   );
 };

@@ -4,6 +4,8 @@ import AnnouncementTab from "./AllTabs/AnnouncementTab";
 import EventTab from "./AllTabs/EventTab";
 import ResourceTab from "./AllTabs/ResourceTab";
 import VideoTab from "./AllTabs/VideoTab";
+import TabNavItem from "./TabNavItem";
+import TabContent from "./TabContent";
 import "./AdminPage.css";
 
 const AdminPage = () => {
@@ -13,16 +15,47 @@ const AdminPage = () => {
     <div className="container">
       <SideNavBar />
       <div className="Tabs">
-        {/* Tab nav */}
         <ul className="nav">
-          <li className={activeTab === "tab1" ? "active" : ""}>
-            ANNOUNCEMENTS
-          </li>
-          <li className={activeTab === "tab2" ? "active" : ""}>EVENTS</li>
-          <li className={activeTab === "tab3" ? "active" : ""}>RESOURCE</li>
-          <li className={activeTab === "tab4" ? "active" : ""}>VIDEOS</li>
+          <TabNavItem
+            title="Announcements"
+            id="tab1"
+            activeTab={activeTab}
+            setActiveTab={setActiveTab}
+          />
+          <TabNavItem
+            title="Events"
+            id="tab2"
+            activeTab={activeTab}
+            setActiveTab={setActiveTab}
+          />
+          <TabNavItem
+            title="Resources"
+            id="tab3"
+            activeTab={activeTab}
+            setActiveTab={setActiveTab}
+          />
+          <TabNavItem
+            title="Videos"
+            id="tab4"
+            activeTab={activeTab}
+            setActiveTab={setActiveTab}
+          />
         </ul>
-        <div className="outlet">{/* content will be shown here */}</div>
+
+        <div className="outlet">
+          <TabContent id="tab1" activeTab={activeTab}>
+            <p>You can do all your announcements changes here!</p>
+          </TabContent>
+          <TabContent id="tab2" activeTab={activeTab}>
+            <p>You can add all the web and mobile party events here 🎉!!</p>
+          </TabContent>
+          <TabContent id="tab3" activeTab={activeTab}>
+            <p>Resources and links....</p>
+          </TabContent>
+          <TabContent id="tab4" activeTab={activeTab}>
+            <p>Your YT videos!</p>
+          </TabContent>
+        </div>
       </div>
     </div>
   );

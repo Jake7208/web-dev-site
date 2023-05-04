@@ -4,8 +4,7 @@ import "./event.css";
 const EventTab = () => {
   return (
     <div className="EventTab">
-      <p>Second Tab!! Hurray!!</p>
-      {/* Second  tab content will go here */}
+      <p>You can add all the web and mobile party events here 🎉!!!</p>
     </div>
   );
 };

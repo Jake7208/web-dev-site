@@ -1,18 +1,8 @@
-.admin {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  margin-left: 20px;
-}
-.container {
-  display: flex;
-}
-/*working on gap*/
 .Tabs {
   width: 80%;
   height: auto;
   min-height: 400px;
-  background: #545556;
+  background: #053742;
   margin: 3.5rem auto 1.5rem;
   padding: 2rem 1rem;
   color: #e8f0f2;
@@ -21,6 +11,8 @@
     padding: 2rem 0;
   }
 }
+
+/* Tab Navigation */
 ul.nav {
   width: 60%;
   margin: 0 auto 2rem;
@@ -34,6 +26,7 @@ ul.nav {
     width: 90%;
   }
 }
+
 ul.nav li {
   width: 50%;
   padding: 1rem;
@@ -41,17 +34,28 @@ ul.nav li {
   text-align: center;
   cursor: pointer;
   transition: all 0.7s;
+}
+
+ul.nav li:first-child {
   border-bottom-left-radius: 2rem;
   border-top-left-radius: 2rem;
 }
-ul.nav li:nth-child(2) {
-  border-radius: 0;
+
+ul.nav li:last-child {
   border-bottom-right-radius: 2rem;
   border-top-right-radius: 2rem;
 }
+
 ul.nav li:hover {
-  background: rgba(224, 24, 24, 0.591);
+  background: rgba(50, 224, 196, 0.15);
 }
+
 ul.nav li.active {
-  background: #a10b0b;
+  background: #39a2db;
+}
+
+/* Tab Content Styles */
+.TabContent {
+  font-size: 2rem;
+  text-align: center;
 }

@@ -1,7 +1,5 @@
 const express = require("express");
 const { Schema, default: mongoose } = require("mongoose");
-const dotenv = require('dotenv');
-const router = express.Router();
 
 const videoSchema = new mongoose.Schema({
     title: {
@@ -12,6 +10,12 @@ const videoSchema = new mongoose.Schema({
         type: String,
         require: [true, 'you need a link for video'],
         unique: true
+    },
+    date: { 
+      type: Date,
+      default: Date.now,
+      required: true,
+      select: false
     }
   })
   const Video = mongoose.model('Video', videoSchema)

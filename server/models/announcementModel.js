@@ -1,8 +1,6 @@
 const express = require("express");
 const { Schema, default: mongoose } = require("mongoose");
 // const AutoIncrement = require('mongoose-sequence')(mongoose);
-const dotenv = require('dotenv');
-const { Db } = require("mongodb");
 const router = express.Router();
 
   

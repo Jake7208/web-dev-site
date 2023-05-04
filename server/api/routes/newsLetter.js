@@ -2,6 +2,8 @@ const express = require('express');
 const router = express.Router();
 //  connecting to the mailchimp api
 const client = require("@mailchimp/mailchimp_marketing");
+const { count } = require('../../models/userModel');
+
 require("dotenv").config();
 
 client.setConfig({
@@ -16,20 +18,31 @@ client.setConfig({
   
 //   run();
 // gets all the links for the newsletters.
-router.get('/getAll', (req, res, next) => {
-   
-    const run = async () => {
-        const {campaigns} = await client.campaigns.list();
-        // console.log(response);
-        const urls = campaigns.filter(campaign => campaign.long_archive_url.includes("web-mobile-development-newsletter-edition"));
-        return urls.map(a => a.long_archive_url);
-    };
-    run().then((e) => {
-        console.log(e);
-        res.status(200).json(e)
-    });
-    
-})
+router.get('/getAll', async (req, res, next) => {
+    const PAGE_SIZE = 10; // Number of items to return per page
+    const page = req.query.page ? parseInt(req.query.page, 10) : 1; // Get the current page number
+    const offset = (page - 1) * PAGE_SIZE; // Calculate the starting index
+    console.log('Offset:', offset);
+  
+    try {
+      const response = await client.campaigns.list({ offset, count: PAGE_SIZE, sort_field: 'create_time', sort_dir: 'DESC' });
+      console.log('Response:', response);
+      const campaigns = response.campaigns.filter(campaign => campaign.long_archive_url.includes("web-mobile-development-newsletter-edition"));
+      console.log('Campaigns:', campaigns);
+      const urls = campaigns.map(campaign => campaign.long_archive_url);
+  
+      if (urls.length === 0) {
+        throw new Error(`Page ${page} does not have any content`);
+      }
+  
+      res.status(200).json(urls);
+    } catch (error) {
+      next(error);
+    }
+  });
+  
+  
+  
 
 router.get('/getLatest', (req, res, next) => {
 const run = async () => {

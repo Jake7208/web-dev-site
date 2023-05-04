@@ -23,7 +23,7 @@ router.get("/getAll", protect, async (req, res, next) => {
     });
     
     
-    router.get("/getById/:id", async (req, res) => {
+    router.get("/getById/:id", protect, async (req, res) => {
         try {
             const AdminId = await Admin.findById(req.params.id);;
             res.status(201).json({

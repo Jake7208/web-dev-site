@@ -2,7 +2,6 @@ const { promisify } = require('util');
 const jwt = require('jsonwebtoken')
 const express = require("express");
 const Admin = require('../../models/userModel');
-const utils = require('../../utils/appError');
 const AppError = require('../../utils/appError');
 const router = express.Router();
 
@@ -38,7 +37,7 @@ router.post("/login", async(req, res, next) => {
     try {
         const { email, password } = req.body;
     
-        // 1) check if email and password exsist
+        // 1) check if email and password exist
         if(!email || !password) {
             return res.status(400).json({
                 status: 'fail',

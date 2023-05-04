@@ -1,17 +1,10 @@
 const express = require('express');
 const Resource = require("../../models/resourceModel");
+const { protect } = require('./auth');
 const router = express.Router();
 
-// function getNextSequenceValue(announcementid){
-//   var sequenceDocument = db.counters.findAndModify({
-//      query:{_id: announcementid },
-//      update: {$inc:{sequence_value:1}},
-//      new:true
-//   });
-//   return sequenceDocument.sequence_value;
-// }
 
-router.post("/add", async (req, res) => {
+router.post("/add", protect, async (req, res) => {
   try {
     const newResources = await Resource.create(req.body)
     res.status(201).json({
@@ -61,7 +54,7 @@ router.get("/getAll", async (req, res, next) => {
     });
 
 
-    router.patch("/updateById/:id", async (req, res) => {
+    router.patch("/updateById/:id",protect, async (req, res) => {
       try {
         const resourcesId = await Resource.findByIdAndUpdate(req.params.id, req.body, {
           new: true,
@@ -79,7 +72,7 @@ router.get("/getAll", async (req, res, next) => {
       }
     })
     
-  router.delete('/deleteById/:id', async (req, res) => {
+  router.delete('/deleteById/:id',protect, async (req, res) => {
       try {
           await Resource.findByIdAndDelete(req.params.id);
       res.status(204).json({

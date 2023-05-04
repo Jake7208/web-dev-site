@@ -4,7 +4,7 @@ const validator = require('validator')
 
 // email, password, passwordConfirm
 const passwordValidator = function(value) {
-    // Check that the password contains at least one uppercase letter, one lowercase letter, and one number
+    // Check that the password contains at least one uppercase letter, one lowercase letter, and one number and one special character
     if (!/[a-z]/.test(value) || !/[A-Z]/.test(value) || !/[0-9]/.test(value) || !/[^a-zA-Z0-9]/.test(value)) {
         throw new Error('Password must contain at least one uppercase letter, one lowercase letter, one number, and one special character');
       }

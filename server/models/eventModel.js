@@ -1,6 +1,5 @@
 const express = require("express");
 const { Schema, default: mongoose } = require("mongoose");
-const dotenv = require('dotenv');
 const router = express.Router();
 
 

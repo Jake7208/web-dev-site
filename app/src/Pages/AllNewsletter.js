@@ -3,14 +3,38 @@ import useFetch from "../Hooks/useFetch";
 import SideNavBar from "../components/SideNavBar";
 import "./allnewsletter.css";
 
+/* array: [
+  {
+    title: "...",
+    url: "..."
+  },
+  {
+    title: "...",
+    url: "..."
+  },
+  {
+    title: "...",
+    url: "..."
+  },
+  {
+    title: "...",
+    url: "..."
+  },
+  {
+    title: "...",
+    url: "..."
+  }
+]
+*/
+
 const AllNewsletter = () => {
-  const { data: postURL, error } = useFetch(
-    `${process.env.REACT_APP_BACKEND_URL}/newsLetter/getAll`
+  const { data: allnewsletterArray, error } = useFetch(
+    `${process.env.REACT_APP_BACKEND_URL}/newsLetter/getAll?page=1`
   );
 
-  console.log(postURL, error);
+  console.log(allnewsletterArray, error);
 
-  if (!postURL && !error) {
+  if (!allnewsletterArray && !error) {
     return <p>Loading...</p>;
   }
 
@@ -21,9 +45,12 @@ const AllNewsletter = () => {
   return (
     <div className="container">
       <SideNavBar />
-      <h3>AllNewsletter</h3>
+      <h3>allnewsletterArray</h3>
       <div>
-        <iframe src={postURL}></iframe>
+        {allnewsletterArray.map((newsletter) => {
+          console.log(newsletter);
+          return <a href={newsletter.url}>{newsletter.title}</a>;
+        })}
       </div>
     </div>
   );

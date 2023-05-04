@@ -29,6 +29,7 @@ const SideNavBar = () => {
       text: "Newsletter",
       //icon: "../../public/icons/article.png",
       icon: <BiNews className="menu-item-icon" />,
+      path: "/AllNewsletter",
     },
     {
       text: "Videos",

@@ -21,7 +21,7 @@ const ViewVideos = () => {
   return (
     <div className="container">
       <SideNavBar />
-      <h3>...............Videos</h3>
+      <h3>...........Videos</h3>
       <div>
         {videoURLs.map((v) => (
           <>

@@ -1,5 +1,7 @@
 import React from "react";
 import useFetch from "../Hooks/useFetch";
+import SideNavBar from "../components/SideNavBar";
+import "./viewvideos.css";
 
 const ViewVideos = () => {
   const { data: postURL, error } = useFetch(
@@ -17,7 +19,9 @@ const ViewVideos = () => {
   }
 
   return (
-    <div>
+    <div className="container">
+      <SideNavBar />
+
       <h3>Videos</h3>
       <div>
         <iframe src={postURL}></iframe>

@@ -34,7 +34,7 @@ const SideNavBar = () => {
       text: "Videos",
       //icon: "../../public/icons/video.png",
       icon: <FiVideo className="menu-item-icon" />,
-      // path: "../Pages/ViewVideos.js",
+      path: "/ViewVideos",
     },
   ];
   return (
@@ -93,14 +93,14 @@ const SideNavBar = () => {
               </Listbox.Options>
             </Listbox>
             {menuItems.map((link, i) => (
-              <a
+              <Link
                 key={`key-${i}`}
                 className={isExpanded ? "menu-item" : "menu-item menu-item-NX"}
-                href="#"
+                to={link.path}
               >
                 <p>{link.text}</p>
                 {link.icon}
-              </a>
+              </Link>
             ))}
           </div>
         </div>

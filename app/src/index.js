@@ -5,6 +5,8 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import AdminPage from "./Pages/AdminPage";
+import ViewVideos from "./Pages/ViewVideos";
+import AllNewsletter from "./Pages/AllNewsletter";
 
 const router = createBrowserRouter([
   {
@@ -14,6 +16,14 @@ const router = createBrowserRouter([
   {
     path: "AdminPage",
     element: <AdminPage />,
+  },
+  {
+    path: "ViewVideos",
+    element: <ViewVideos />,
+  },
+  {
+    path: "AllNewsletter",
+    element: <AllNewsletter />,
   },
 ]);
 

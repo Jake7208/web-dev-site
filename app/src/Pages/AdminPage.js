@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import SideNavBar from "../components/SideNavBar";
 import AnnouncementTab from "./AllTabs/AnnouncementTab";
 import EventTab from "./AllTabs/EventTab";
@@ -7,9 +7,48 @@ import VideoTab from "./AllTabs/VideoTab";
 import TabNavItem from "./TabNavItem";
 import TabContent from "./TabContent";
 import "./AdminPage.css";
+import useFetch from "../Hooks/useFetch";
 
 const AdminPage = () => {
   const [activeTab, setActiveTab] = useState("tab1");
+  const [isLoading, setIsLoading] = useState(true);
+  const [isAuthorized, setIsAuthorized] = useState(false);
+  /*
+    data: {
+      events: [{
+        title: string,
+        description: string,
+        date: string
+      }],
+      announcements: [{
+        title: string,
+        description: string,
+        date: string
+      }],
+      videos: [{
+        title: string,
+        url: string
+      }],
+      resources: [{
+        title: string,
+        description: string
+      }],
+    }
+
+  */
+  const { data, error } = useFetch(
+    `${process.env.REACT_APP_BACKEND_URL}/newsLetter/adminGetAll`
+  );
+
+  if (isLoading) {
+    // style it a bit more
+    return <p>Loading...</p>;
+  }
+
+  if (error) {
+    // login form goes here
+    return <p>go away buddy</p>;
+  }
 
   return (
     <div className="container">
@@ -44,7 +83,7 @@ const AdminPage = () => {
 
         <div className="outlet">
           <TabContent id="tab1" activeTab={activeTab}>
-            <AnnouncementTab />
+            <AnnouncementTab data={data.announcements} />
           </TabContent>
           <TabContent id="tab2" activeTab={activeTab}>
             <EventTab />

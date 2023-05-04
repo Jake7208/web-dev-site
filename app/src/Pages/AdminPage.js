@@ -44,16 +44,16 @@ const AdminPage = () => {
 
         <div className="outlet">
           <TabContent id="tab1" activeTab={activeTab}>
-            <p>You can do all your announcements changes here!</p>
+            <AnnouncementTab />
           </TabContent>
           <TabContent id="tab2" activeTab={activeTab}>
-            <p>You can add all the web and mobile party events here 🎉!!</p>
+            <EventTab />
           </TabContent>
           <TabContent id="tab3" activeTab={activeTab}>
-            <p>Resources and links....</p>
+            <ResourceTab />
           </TabContent>
           <TabContent id="tab4" activeTab={activeTab}>
-            <p>Your YT videos!</p>
+            <VideoTab />
           </TabContent>
         </div>
       </div>

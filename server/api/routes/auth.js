@@ -83,10 +83,9 @@ router.protect = async (req, res, next) =>  {
         // 2) verification token
        const decoded = await promisify(jwt.verify)(token, process.env.JWT_SECRET)
        console.log(decoded);
-        // }
 
         // 3) check if user still exist
-    
+        
         // 4) check if user changed password after the token was issued
         next()
     } catch (err) {

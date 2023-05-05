@@ -24,7 +24,7 @@
     "morgan": "^1.10.0",
     "valid-url": "^1.0.9",
     "validator": "^13.9.0",
-    "vercel": "^29.0.3",
+    "vercel": "^29.1.1",
     "yarn": "^1.22.19"
   },
   "devDependencies": {

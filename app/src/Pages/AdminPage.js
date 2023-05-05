@@ -13,6 +13,8 @@ const AdminPage = () => {
   const [activeTab, setActiveTab] = useState("tab1");
   const [isLoading, setIsLoading] = useState(true);
   const [isAuthorized, setIsAuthorized] = useState(false);
+  const [username, setUsername] = useState("");
+  cosnt[(password, setPassword)] = useState("");
   /*
     data: {
       events: [{

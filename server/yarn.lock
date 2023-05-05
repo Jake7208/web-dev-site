@@ -2756,7 +2756,17 @@ exit-hook@2.2.1:
   resolved "https://registry.npmjs.org/exit-hook/-/exit-hook-2.2.1.tgz"
   integrity sha512-eNTPlAD67BmP31LDINZ3U7HSF8l57TxOY2PmBJ1shpCvpnxBF93mWCE8YHBnXs8qiUZJc9WDcWIeC3a2HIAMfw==
 
-express@^4.17.1, express@^4.18.2:
+express-mongo-sanitize@^2.2.0:
+  version "2.2.0"
+  resolved "https://registry.npmjs.org/express-mongo-sanitize/-/express-mongo-sanitize-2.2.0.tgz"
+  integrity sha512-PZBs5nwhD6ek9ZuP+W2xmpvcrHwXZxD5GdieX2dsjPbAbH4azOkrHbycBud2QRU+YQF1CT+pki/lZGedHgo/dQ==
+
+express-rate-limit@^6.7.0:
+  version "6.7.0"
+  resolved "https://registry.npmjs.org/express-rate-limit/-/express-rate-limit-6.7.0.tgz"
+  integrity sha512-vhwIdRoqcYB/72TK3tRZI+0ttS8Ytrk24GfmsxDXK9o9IhHNO5bXRiXQSExPQ4GbaE5tvIS7j1SGrxsuWs+sGA==
+
+"express@^4 || ^5", express@^4.17.1, express@^4.18.2:
   version "4.18.2"
   resolved "https://registry.npmjs.org/express/-/express-4.18.2.tgz"
   integrity sha512-5/PsL6iGPdfQ/lKM1UuielYgv3BUoJfz1aUwU9vHZ+J7gyvwdQXFEBIEIaxeGf0GIcreATNyBExtalisDbuMqQ==
@@ -3181,6 +3191,19 @@ hast-util-whitespace@^2.0.0:
   version "2.0.1"
   resolved "https://registry.npmjs.org/hast-util-whitespace/-/hast-util-whitespace-2.0.1.tgz"
   integrity sha512-nAxA0v8+vXSBDt3AnRUNjyRIQ0rD+ntpbAp4LnPkumc5M9yUbSMa4XDU9Q6etY4f1Wp4bNgvc1yjiZtsTTrSng==
+
+helmet@^6.1.5:
+  version "6.1.5"
+  resolved "https://registry.npmjs.org/helmet/-/helmet-6.1.5.tgz"
+  integrity sha512-UgAvdoG0BhF9vcCh/j0bWtElo2ZHHk6OzC98NLCM6zK03DEVSM0vUAtT7iR+oTo2Mi6sGelAH3tL6B/uUWxV4g==
+
+hpp@^0.2.3:
+  version "0.2.3"
+  resolved "https://registry.npmjs.org/hpp/-/hpp-0.2.3.tgz"
+  integrity sha512-4zDZypjQcxK/8pfFNR7jaON7zEUpXZxz4viyFmqjb3kWNWAHsLEUmWXcdn25c5l76ISvnD6hbOGO97cXUI3Ryw==
+  dependencies:
+    lodash "^4.17.12"
+    type-is "^1.6.12"
 
 http-cache-semantics@^4.0.0:
   version "4.1.1"
@@ -3629,7 +3652,7 @@ lodash.debounce@^4.0.8:
   resolved "https://registry.npmjs.org/lodash.debounce/-/lodash.debounce-4.0.8.tgz"
   integrity sha512-FT1yDzDYEoYWhnSGnpE/4Kj1fLZkDFyqRb7fNt6FdYOSxlUWAtp42Eh6Wb0rGIv/m9Bgo7x4GhQbm5Ys4SG5ow==
 
-lodash@^4.17.14, lodash@^4.17.20, lodash@^4.17.21:
+lodash@^4.17.12, lodash@^4.17.14, lodash@^4.17.20, lodash@^4.17.21:
   version "4.17.21"
   resolved "https://registry.npmjs.org/lodash/-/lodash-4.17.21.tgz"
   integrity sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==
@@ -5715,7 +5738,7 @@ type-fest@^0.21.3:
   resolved "https://registry.npmjs.org/type-fest/-/type-fest-0.21.3.tgz"
   integrity sha512-t0rzBq87m3fVcduHDUFhKmyyX+9eo6WQjZvf51Ea/M0Q7+T374Jp1aUiyUl0GKxp8M/OETVHSDvmkyPgvX+X2w==
 
-type-is@~1.6.18:
+type-is@^1.6.12, type-is@~1.6.18:
   version "1.6.18"
   resolved "https://registry.npmjs.org/type-is/-/type-is-1.6.18.tgz"
   integrity sha512-TkRKr9sUTxEH8MdfuCSP7VizJyzRNMjj2J2do2Jr3Kym598JVdEksuzPQCnlFPW4ky9Q+iA+ma9BGm06XQBy8g==
@@ -6112,6 +6135,18 @@ xregexp@2.0.0:
   version "2.0.0"
   resolved "https://registry.npmjs.org/xregexp/-/xregexp-2.0.0.tgz"
   integrity sha512-xl/50/Cf32VsGq/1R8jJE5ajH1yMCQkpmoS10QbFZWl2Oor4H0Me64Pu2yxvsRWK3m6soJbmGfzSR7BYmDcWAA==
+
+xss-clean@^0.1.1:
+  version "0.1.1"
+  resolved "https://registry.npmjs.org/xss-clean/-/xss-clean-0.1.1.tgz"
+  integrity sha512-On99yydxoAEkHpraR7Wjg9cD6UmKfbtH2HXO1it2djid32osHL7Qr8bIu+dGYoOeKzf3ZszLfz1gwR/D7whZ2A==
+  dependencies:
+    xss-filters "1.2.6"
+
+xss-filters@1.2.6:
+  version "1.2.6"
+  resolved "https://registry.npmjs.org/xss-filters/-/xss-filters-1.2.6.tgz"
+  integrity sha512-uqgwZRpVJCDfHsRX9lDrkPyCitQYzPklmLSbajJncATZKAUd1tF1x9y2VyPNFMv8SsSWed80xorSS5qGpw3WiA==
 
 xtend@~4.0.1:
   version "4.0.2"

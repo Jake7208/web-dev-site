@@ -92,6 +92,10 @@ const AdminPage = () => {
     );
   }
 
+  if (!isAuthorized) {
+    return <p>Go away buddy!!!!</p>;
+  }
+
   return (
     <div className="container">
       <SideNavBar />

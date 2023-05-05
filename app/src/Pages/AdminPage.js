@@ -50,7 +50,7 @@ const AdminPage = () => {
 
   const handleLogin = (event) => {
     event.preventDefault();
-    // Add your authentication login here
+    // Add authentication login here
     if (username === "admin" && password === "password") {
       setIsAuthorized(true);
     } else {
@@ -65,7 +65,31 @@ const AdminPage = () => {
 
   if (error) {
     // login form goes here
-    return <p>go away buddy</p>;
+    // return <p>go away buddy</p>;
+    return (
+      <div className="container">
+        <form onSubmit={handleLogin}>
+          <h2>Login</h2>
+          <label htmlFor="username">Username:</label>
+          <input
+            type="text"
+            id="username"
+            name="username"
+            value={username}
+            onChange={(event) => setUsername(event.target.value)}
+          />
+          <label htmlFor="password">Password:</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            value={password}
+            onChange={(event) => setPassword(event.target.value)}
+          />
+          <button type="submit">Log in</button>
+        </form>
+      </div>
+    );
   }
 
   return (

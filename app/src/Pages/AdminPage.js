@@ -14,7 +14,7 @@ const AdminPage = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [isAuthorized, setIsAuthorized] = useState(false);
   const [username, setUsername] = useState("");
-  cosnt[(password, setPassword)] = useState("");
+  const [password, setPassword] = useState("");
   /*
     data: {
       events: [{
@@ -41,6 +41,22 @@ const AdminPage = () => {
   const { data, error } = useFetch(
     `${process.env.REACT_APP_BACKEND_URL}/newsLetter/adminGetAll`
   );
+
+  useEffect(() => {
+    if (data) {
+      setIsLoading(false);
+    }
+  }, [data]);
+
+  const handleLogin = (event) => {
+    event.preventDefault();
+    // Add your authentication login here
+    if (username === "admin" && password === "password") {
+      setIsAuthorized(true);
+    } else {
+      setIsAuthorized(false);
+    }
+  };
 
   if (isLoading) {
     // style it a bit more

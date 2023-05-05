@@ -65,7 +65,6 @@ const AdminPage = () => {
 
   if (error) {
     // login form goes here
-    // return <p>go away buddy</p>;
     return (
       <div className="container">
         <form onSubmit={handleLogin}>

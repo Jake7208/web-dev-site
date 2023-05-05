@@ -58,12 +58,16 @@ const AdminPage = () => {
     }
   };
 
-  if (isLoading) {
+  if (isLoading && !error) {
     // style it a bit more
     return <p>Loading...</p>;
   }
 
   if (error) {
+    return <p>Failed to grab backend data!</p>;
+  }
+
+  if (!isAuthorized) {
     // login form goes here
     return (
       <div className="container">
@@ -89,10 +93,6 @@ const AdminPage = () => {
         </form>
       </div>
     );
-  }
-
-  if (!isAuthorized) {
-    return <p>Go away buddy!!!!</p>;
   }
 
   return (

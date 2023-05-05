@@ -1,3 +1,4 @@
+const path = require("path");
 const express = require("express");
 const morgan = require("morgan");
 const bodyParser = require("body-parser");
@@ -27,9 +28,12 @@ const userRoute = require("./api/routes/user");
 const AdminAllRoute = require('./api/routes/getAdminEverything');
 const { reset } = require("nodemon");
 
-app.get("/", (req, res) => {
-  res.send("Express JS on Vercel");
-});
+app.use(express.static(path.join(__dirname, "..", "app", "build")));
+
+
+// app.get("/", (req, res) => {
+//   res.send("Express JS on Vercel");
+// });
 
 // 1) global middleware
 // Set security HTTP headers
@@ -57,6 +61,12 @@ app.use(xss());
 // Prevent parameter pollution
 app.use(hpp())
 
+// route anything like /* to app/build/index.html
+
+// route anything with /api/* to backend
+// app.use({
+//   if("/api/")
+// })
 // !!! router connections for routes file (not an error) 
 app.use("/api/announcements", announcementRoutes);
 app.use("/api/events", eventRoute);
@@ -97,6 +107,10 @@ app.use((error, req, res, next) => {
   });
 });
 
+app.get('*', function(req, res, next) {
+  // if ( req.url.includes('/api')) return next(); 
+  res.sendFile('index.html', {root: path.join(__dirname, '../app/build')});
+});
 
 // connection to the database 
 const DB = process.env.DATABASE;

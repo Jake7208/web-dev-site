@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "npm install",
+    "build": "npm install && cd ../app && npm install && npm run build",
     "start": "NODE_ENV=production node index.js",
     "start:dev": "nodemon index.js",
     "start:prod": "NODE_ENV=production nodemon index.js"

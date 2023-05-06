@@ -1,0 +1,240 @@
+/* NX = not expanded */
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+.side-nav-container {
+	width: 300px;
+	height: 100vh;
+	position: fixed;
+	background-color: #1a212b;
+	z-index: 10;
+	transition: 0.4s;
+	transform: translateX(0px);
+}
+.side-nav-container-NX {
+	transform: translateX(-215px);
+}
+
+.side-nav-box {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	height: 100%;
+	padding: 1rem;
+	color: var(--light);
+}
+
+.nav-upper,
+.nav-heading,
+.nav-menu,
+.menu-item,
+.nav-footer {
+	background-color: #1a212b;
+}
+
+.nav-heading {
+	grid-template-columns: 2fr 1fr;
+	grid-template-rows: 1fr;
+	height: 75px;
+}
+
+.nav-brand {
+	display: flex;
+	color: var(--light);
+	padding-top: 20px;
+}
+.nav-brand img {
+	height: 75px;
+	width: 75px;
+	padding-top: 15px;
+}
+
+.nav-brand h2 {
+	font-family: "Roboto";
+	font-size: 27px;
+}
+.hamburger {
+	background: none;
+	border: none;
+	cursor: pointer;
+	margin: auto;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.hamburger span {
+	display: block;
+	margin-top: 5px;
+	background-color: var(--light);
+	border-radius: 15px;
+	height: 5px;
+	width: 35px;
+
+	transition: 0.4s;
+}
+
+.hamburger:hover span {
+	background-color: #cf142b;
+}
+
+.hamburger-in:hover span:nth-child(1) {
+	width: 25px;
+	transform: translateY(4px) rotate(-25deg);
+}
+.hamburger-in:hover span:nth-child(2) {
+	width: 40px;
+}
+.hamburger-in:hover span:nth-child(3) {
+	width: 25px;
+	transform: translateY(-4px) rotate(25deg);
+}
+/* ///////////////////// */
+/* ///////////////////// */
+/* ///////////////////// */
+/* ///////////////////// */
+.hamburger-out {
+	margin-left: 24px;
+	transform: translateX(220px);
+}
+.hamburger-out:hover span:nth-child(1) {
+	width: 25px;
+	transform: translate(14px, 4px) rotate(-155deg);
+}
+.hamburger-out:hover span:nth-child(2) {
+	width: 40px;
+}
+.hamburger-out:hover span:nth-child(3) {
+	width: 25px;
+	transform: translate(14px, -4px) rotate(155deg);
+}
+
+.nav-menu {
+	grid-template-rows: repeat(7, 1fr);
+	margin-top: 50px;
+}
+
+.menu-item {
+	height: 57px;
+	display: flex;
+	color: var(--light);
+	text-decoration: none;
+	font-family: "Roboto";
+	font-size: large;
+	text-transform: uppercase;
+	border-radius: 10px;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0 1rem;
+}
+
+.menu-item-ql {
+	border: none;
+	height: 57px;
+	width: 100%;
+	display: flex;
+	color: var(--light);
+	text-decoration: none;
+	font-family: "Roboto";
+	font-size: large;
+	text-transform: uppercase;
+	border-radius: 10px;
+	align-items: center;
+	justify-content: space-between;
+	background-color: #1a212b;
+	padding: 0 1rem;
+	cursor: pointer;
+}
+
+.menu-item:hover {
+	background-color: #cf142b;
+}
+
+.menu-item-ql:hover {
+	background-color: #cf142b;
+}
+
+.link-icon {
+	/* display: flex; */
+	height: 40px;
+	width: 40px;
+}
+
+.menu-item-icon {
+	height: 35px;
+	width: 35px;
+}
+
+.nav-footer {
+	width: 100%;
+	height: 87px;
+	/* position: absolute; */
+	bottom: 0;
+	grid-template-rows: 1fr;
+	grid-template-columns: 2fr 1fr;
+}
+
+.nav-details {
+	display: flex;
+}
+.nav-details img {
+	width: 50px;
+	padding: 0 20px;
+}
+
+.nav-footer {
+	padding-bottom: 30px;
+}
+.nav-footer-info {
+	padding-right: 22px;
+}
+
+.nav-footer-user-name {
+	font-size: 18px;
+	font-weight: 700;
+}
+
+.nav-footer-user-position {
+	margin-top: -15px;
+	color: var(--gray);
+}
+.logout-icon {
+	width: 40px;
+	height: 30px;
+	padding: 10px;
+	margin: 18px 5px 5px 0px;
+	color: var(--light);
+	border-radius: 10px;
+}
+.logout-icon:hover {
+	background-color: #cf142b;
+}
+
+.chev {
+	margin-left: 15px;
+}
+
+/* .dropdown-options-container {
+} */
+
+.dropdown-options {
+	line-height: 30px;
+	cursor: pointer;
+	display: flex;
+	justify-content: space-between;
+	padding-right: 25px;
+}
+.dropdown-options:hover {
+	/* background: #cf3849; */
+	/* background: #960e1e; */
+	border-radius: 5px;
+	border: 3px solid #cf142b;
+}
+.dropdown-options-container {
+	list-style: none;
+}
+/*inside <a>*/
+/* .submenu-icon {
+	width: 20px;
+	height: 20px;
+} */

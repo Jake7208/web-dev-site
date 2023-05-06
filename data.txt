@@ -1,0 +1,33 @@
+{
+    announcements {
+        "id": "1",
+        "title": "announcement A",
+        "description": "First Announcement",
+        "date": 2023-04-25
+
+    },
+       events {
+          "id": "1",
+        "title": "events A",
+        "description": "First events",
+        "date": 2023-04-25
+    },
+       resources {
+        "id": "1",
+        "title": "resource A",
+        "description": "The first resources"
+    },
+       newsletters {
+        "id": "",
+        "title": "",
+        "number": "",
+        "htmlData": ""
+        "date":""
+    },
+       videos {
+        "id": "",
+        "title": "",
+        "url": "",
+        "date":""
+    }
+}

@@ -5,6 +5,7 @@
 	"main": "index.js",
 	"scripts": {
 		"start": "node index.js",
+		"build": "npm run build --prefix public",
 		"install:all": "npm i && cd public && npm install",
 		"dev": "concurrently \"npm --prefix public start\" \"npm run start\""
 	},

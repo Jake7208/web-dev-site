@@ -39,7 +39,7 @@ const AdminPage = () => {
 
   */
   const { data, error } = useFetch(
-    `${process.env.REACT_APP_BACKEND_URL}/newsLetter/adminGetAll`
+    `${process.env.REACT_APP_BACKEND_URL}/getAdminEverything/getAll`
   );
 
   useEffect(() => {
@@ -64,7 +64,7 @@ const AdminPage = () => {
   }
 
   if (error) {
-    return <p>Failed to grab backend data!</p>;
+    setIsAuthorized(false);
   }
 
   if (!isAuthorized) {

@@ -15,6 +15,7 @@ const AdminPage = () => {
   const [isAuthorized, setIsAuthorized] = useState(false);
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [errorMsg, setErrorMsg] = useState(undefined);
   /*
     data: {
       events: [{
@@ -38,18 +39,46 @@ const AdminPage = () => {
     }
 
   */
-  const { data, error } = useFetch(
-    `${process.env.REACT_APP_BACKEND_URL}/newsLetter/adminGetAll`
+  const { data, error, status } = useFetch(
+    `${process.env.REACT_APP_BACKEND_URL}/getAdminEverything/getAll`
   );
 
   useEffect(() => {
     if (data) {
       setIsLoading(false);
     }
-  }, [data]);
+
+    console.log(data, error, status);
+  }, [data, error, status]);
 
   const handleLogin = (event) => {
     event.preventDefault();
+    fetch(`${process.env.REACT_APP_BACKEND_URL}/auth/login`, {
+      method: "POST",
+      header: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        email: username,
+        password: password,
+      }),
+    })
+      .then((res) => {
+        res.json().then((data) => {
+          // password good n stuff
+          if (data.status === "fail") {
+            // no login
+            setErrorMsg(data.data);
+          } else {
+            // good login
+          }
+          console.log(data);
+        });
+      })
+      .catch(() => {
+        console.log("oh no! 2");
+      });
+
     // Add authentication login here
     if (username === "admin" && password === "password") {
       setIsAuthorized(true);
@@ -63,11 +92,7 @@ const AdminPage = () => {
     return <p>Loading...</p>;
   }
 
-  if (error) {
-    return <p>Failed to grab backend data!</p>;
-  }
-
-  if (!isAuthorized) {
+  if (status === 401) {
     // login form goes here
     return (
       <div className="container">
@@ -90,9 +115,14 @@ const AdminPage = () => {
             onChange={(event) => setPassword(event.target.value)}
           />
           <button type="submit">Log in</button>
+          {errorMsg && <p>{errorMsg}</p>}
         </form>
       </div>
     );
+  }
+
+  if (error) {
+    return <p>Failed to grab backend data!</p>;
   }
 
   return (

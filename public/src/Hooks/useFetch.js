@@ -1,14 +1,14 @@
 import { useRef, useEffect, useReducer } from "react";
 
 function useFetch(url, options) {
-  const cache = useRef({});
-
+  const cache = useRef({ current: {} });
   // Used to prevent state update if the component is unmounted
   const cancelRequest = useRef(false);
 
   const initialState = {
     error: undefined,
     data: undefined,
+    status: undefined,
   };
 
   // Keep state logic separated
@@ -17,9 +17,17 @@ function useFetch(url, options) {
       case "loading":
         return { ...initialState };
       case "fetched":
-        return { ...initialState, data: action.payload };
+        return {
+          ...initialState,
+          data: action.payload?.data,
+          status: action.payload?.status,
+        };
       case "error":
-        return { ...initialState, error: action.payload };
+        return {
+          ...initialState,
+          error: action.payload?.error,
+          status: action.payload?.status,
+        };
       default:
         return state;
     }
@@ -37,30 +45,44 @@ function useFetch(url, options) {
       dispatch({ type: "loading" });
 
       // If a cache exists for this url, return it
-      if (cache.current[url]) {
-        dispatch({ type: "fetched", payload: cache.current[url] });
+      if (!!cache.current[url]) {
+        dispatch({
+          type: "fetched",
+          payload: cache.current[url],
+        });
         return;
       }
 
+      let response = undefined;
+
       try {
-        const response = await fetch(url, options);
+        response = await fetch(url, options);
         if (!response.ok) {
           throw new Error(response.statusText);
         }
 
         const data = await response.json();
-        cache.current[url] = data;
+        cache.current[url] = {
+          data: data.data,
+          status: response.status,
+        };
         if (cancelRequest.current) return;
 
         if (data.status === "fail") {
           throw new Error(data.data);
         }
 
-        dispatch({ type: "fetched", payload: data.data });
+        dispatch({
+          type: "fetched",
+          payload: { data: data.data, status: response.status },
+        });
       } catch (error) {
         if (cancelRequest.current) return;
 
-        dispatch({ type: "error", payload: error });
+        dispatch({
+          type: "error",
+          payload: { error: error, status: response?.status },
+        });
       }
     };
 

@@ -55,7 +55,7 @@ const AdminPage = () => {
     event.preventDefault();
     fetch(`${process.env.REACT_APP_BACKEND_URL}/auth/login`, {
       method: "POST",
-      header: {
+      headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({

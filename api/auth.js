@@ -80,7 +80,6 @@ router.post("/login", async (req, res, next) => {
 
     res.status(200).json({
       status: "success",
-      data: "",
     });
   } catch (err) {
     res.status(400).json({
@@ -89,6 +88,15 @@ router.post("/login", async (req, res, next) => {
     });
   }
 });
+
+router.get("/set-cookie", (req, res) => {
+	// Set a cookie named "my-cookie" with a value of "hello"
+	res.cookie("my-cookie", "hello");
+	
+	// Send a response to the client
+	res.send("Cookie set successfully");
+  });
+  
 
 router.protect = async (req, res, next) => {
   try {

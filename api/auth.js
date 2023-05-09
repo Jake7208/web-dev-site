@@ -20,8 +20,8 @@ const createSendToken = (user, statusCode, res) => {
       Date.now() + process.env.JWT_COOKIE_EXPIRES_IN * 60 * 60 * 1000
     ),
     httpOnly: true,
-    secure: true, // Add secure flag for HTTPS connections
-    sameSite: "none", // Add sameSite attribute for cross-site requests
+    maxAge: 60 * 60 * 1000, // 1 hour
+    sameSite: 'Lax',
   };
   if (process.env.NODE_ENV === "production") {
     cookieOptions.secure = true;

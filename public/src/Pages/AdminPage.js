@@ -62,6 +62,7 @@ const AdminPage = () => {
         email: username,
         password: password,
       }),
+      credentials: 'include',
     })
       .then((res) => {
         res.json().then((data) => {

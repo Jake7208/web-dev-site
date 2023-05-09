@@ -19,7 +19,8 @@ console.log("process.env.NODE_ENV", process.env.NODE_ENV);
 // preventing cors errors
 app.use(
 	cors({
-		origin: "*",
+		origin: "http://localhost:3000",
+		credentials: true,
 	}),
 );
 app.use(cookieParser());

@@ -1,0 +1,46 @@
+.callTo {
+	position: relative;
+	width: 85vw;
+	height: 80px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: #0e1538;
+	overflow: hidden;
+	border-radius: 20px;
+}
+.callTo::before {
+	content: "";
+	position: absolute;
+	width: 85vw;
+	height: 200%;
+	background: linear-gradient(#00ccff, #d400d4);
+	animation: animate 4s linear infinite;
+}
+@keyframes animate {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+.callTo::after {
+	content: "";
+	position: absolute;
+	inset: 4px;
+	background: #0e1538;
+}
+
+.action {
+	position: relative;
+	z-index: 10;
+	text-align: center;
+	justify-content: center;
+	align-items: center;
+	color: white;
+	font-size: x-large;
+	font-weight: bold;
+	width: 100%;
+	text-decoration: none;
+}

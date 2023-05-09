@@ -68,31 +68,19 @@ router.post("/login", async (req, res, next) => {
       });
     }
     // 3) If everything ok, send token to client
-	const token = signToken(admin._id);
-	const cookieOptions = {
-	  expires: new Date(
-		Date.now() + process.env.JWT_COOKIE_EXPIRES_IN * 60 * 60 * 1000
-	  ),
-	  httpOnly: true,
-	  secure: req.protocol === "https",
-	};
-	
-	if (process.env.NODE_ENV === "development") {
-	  cookieOptions.secure = false;
-	} else {
-	  cookieOptions.secure = true;
-	}
-	
-	if (!process.env.JWT_COOKIE_EXPIRES_IN) {
-	  throw new Error('JWT_COOKIE_EXPIRES_IN environment variable is not set');
-	}
-	
-	res.cookie("jwt", token, cookieOptions);
-	
-	res.status(200).json({
-	  status: "success",
-	  data: ""
-	});
+    const token = signToken(admin._id);
+    const cookieOptions = {
+      expires: new Date(
+        Date.now() + process.env.JWT_COOKIE_EXPIRES_IN * 60 * 60 * 1000
+      ),
+      httpOnly: true,
+    };
+    if (process.env.NODE_ENV !== "development") cookieOptions.secure = true;
+    res.cookie("jwt", token, cookieOptions);
+
+    res.status(200).json({
+      status: "success",
+    });
   } catch (err) {
     res.status(400).json({
       status: "fail",

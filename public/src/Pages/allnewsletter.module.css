@@ -1,0 +1,16 @@
+.container {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+	margin-left: 20px;
+}
+
+.container a:link {
+	display: flex;
+	justify-content: space-between;
+	color: #1a212b;
+	text-decoration: none;
+	padding: 18px;
+	font-size: large;
+}

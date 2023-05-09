@@ -20,7 +20,7 @@ const WebEvents = () => {
 	}
 
 	return (
-		<div className={classes.newsletter}>
+		<div className={classes.news}>
 			<h3 className={classes.events}>Web Events</h3>
 			{posts.map((post) => {
 				return (

@@ -223,19 +223,27 @@
 	display: flex;
 	justify-content: space-between;
 	padding-right: 25px;
+	margin-top: 10px;
 }
 .dropdown-options a:link {
 	text-decoration: none;
 	color: white; /*not working...why???*/
 }
 .dropdown-options a:visited {
-	color: aqua; /*already showing as visited...is this because of target="_blank"???*/
+	color: aqua;
 }
-.dropdown-options:hover {
-	/* background: #cf3849; */
-	/* background: #960e1e; */
+.dropdown-options a:visited:hover {
+	color: #255784; /*already showing as visited...is this because of target="_blank"???*/
+}
+/* .dropdown-options:hover {
 	border-radius: 5px;
 	border: 3px solid #cf142b;
+} */
+.dropdown-options:hover {
+	color: #255784;
+	background: #2196f3;
+	box-shadow: 0 0 10px #2196f3, 0 0 40px #2196f3, 0 0 80px #2196f3;
+	border-radius: 5px;
 }
 .dropdown-options-container {
 	list-style: none;

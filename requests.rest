@@ -1,0 +1,8 @@
+Post http://localhost:3001/api/auth/login
+Content-Type: application/json
+{
+    "email": "jakdasf@gmas.com",
+    "password": "secur3PaS$",
+    "passwordConfirm": "secur3PaS$"
+
+}

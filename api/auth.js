@@ -4,6 +4,7 @@ const express = require("express");
 const Admin = require("../models/userModel");
 const AppError = require("../utils/appError");
 const { log } = require("console");
+const { json } = require("body-parser");
 const router = express.Router();
 
 const signToken = (id) => {
@@ -12,38 +13,29 @@ const signToken = (id) => {
   });
 };
 
-//  do not deploy this this is for admin use only.
-router.post("/newAdmin", async (req, res, next) => {
-  try {
-    const newAdmin = await Admin.create({
-      email: req.body.email,
-      password: req.body.password,
-      passwordConfirm: req.body.passwordConfirm,
-    });
-
-    const token = signToken(newAdmin._id);
-    const cookieOptions = {
-      expires: new Date(
-        Date.now() + process.env.JWT_COOKIE_EXPIRES_IN * 60 * 60 * 1000
-      ),
-      httpOnly: true,
-    };
-    if (process.env.NODE_ENV === "production") cookieOptions.secure = true;
-    res.cookie("jwt", token, cookieOptions);
-    // remove password from output
-    newAdmin.password = undefined;
-
-    res.status(201).json({
-      status: "success",
-      data: newAdmin,
-    });
-  } catch (err) {
-    res.status(400).json({
-      status: "fail",
-      data: err,
-    });
+const createSendToken = (user, statusCode, res) => {
+  const token = signToken(user._id);
+  const cookieOptions = {
+    expires: new Date(
+      Date.now() + process.env.JWT_COOKIE_EXPIRES_IN * 60 * 60 * 1000
+    ),
+    httpOnly: true,
+    secure: true, // Add secure flag for HTTPS connections
+    sameSite: "none", // Add sameSite attribute for cross-site requests
+  };
+  if (process.env.NODE_ENV === "production") {
+    cookieOptions.secure = true;
   }
-});
+  res.cookie("jwt", token, cookieOptions);
+  res.status(statusCode).json({
+    status: "success",
+    token,
+    data: {
+      user,
+    },
+  });
+};
+
 
 router.post("/login", async (req, res, next) => {
   try {
@@ -67,20 +59,10 @@ router.post("/login", async (req, res, next) => {
         data: "Incorrect email or password",
       });
     }
-    // 3) If everything ok, send token to client
-    const token = signToken(admin._id);
-    const cookieOptions = {
-      expires: new Date(
-        Date.now() + process.env.JWT_COOKIE_EXPIRES_IN * 60 * 60 * 1000
-      ),
-      httpOnly: true,
-    };
-    if (process.env.NODE_ENV !== "development") cookieOptions.secure = true;
-    res.cookie("jwt", token, cookieOptions);
 
-    res.status(200).json({
-      status: "success",
-    });
+    // Set the JWT token in a cookie and send it to the client
+    createSendToken(admin, 200, res);
+
   } catch (err) {
     res.status(400).json({
       status: "fail",
@@ -88,6 +70,14 @@ router.post("/login", async (req, res, next) => {
     });
   }
 });
+
+
+// Add the following middleware function to set the Access-Control-Allow-Credentials header
+// router.use((req, res, next) => {
+//   res.header("Access-Control-Allow-Credentials", true);
+//   next();
+// });
+
 
 router.get("/set-cookie", (req, res) => {
 	// Set a cookie named "my-cookie" with a value of "hello"

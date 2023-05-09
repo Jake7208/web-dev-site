@@ -97,7 +97,7 @@ const AdminPage = () => {
     return (
       <div className="container">
         <form onSubmit={handleLogin}>
-          <h2>Login</h2>
+          <h2>Admin Login</h2>
           <label htmlFor="username">Username:</label>
           <input
             type="text"

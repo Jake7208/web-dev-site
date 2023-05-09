@@ -224,6 +224,13 @@
 	justify-content: space-between;
 	padding-right: 25px;
 }
+.dropdown-options a:link {
+	text-decoration: none;
+	color: white; /*not working...why???*/
+}
+.dropdown-options a:visited {
+	color: aqua; /*already showing as visited...is this because of target="_blank"???*/
+}
 .dropdown-options:hover {
 	/* background: #cf3849; */
 	/* background: #960e1e; */

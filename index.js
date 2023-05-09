@@ -5,6 +5,7 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 const app = express();
 const mongoose = require("mongoose");
+const cookieParser = require("cookie-parser");
 const rateLimit = require("express-rate-limit");
 const helmet = require("helmet");
 const mongoSanitize = require("express-mongo-sanitize");
@@ -21,6 +22,7 @@ app.use(
 		origin: "*",
 	}),
 );
+app.use(cookieParser());
 
 app.use(helmet());
 

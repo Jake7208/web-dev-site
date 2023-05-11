@@ -44,7 +44,7 @@ const SideNavBar = () => {
 			href: "https://code.visualstudio.com/",
 			name: "VS Code",
 			icon: <SiVisualstudiocode className="submenu-icon" />,
-		},
+		}, // hello world
 	];
 	const [selected, setSelected] = useState(dropdownMenu[0]);
 	const [isExpanded, setExpandState] = useState(false);

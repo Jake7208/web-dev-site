@@ -5,7 +5,7 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background: #0e1538;
+	background: #12161d;
 	overflow: hidden;
 	border-radius: 20px;
 }
@@ -14,7 +14,7 @@
 	position: absolute;
 	width: 85vw;
 	height: 200%;
-	background: linear-gradient(#00ccff, #d400d4);
+	background: linear-gradient(#1995fa, #fa195c);
 	animation: animate 4s linear infinite;
 }
 @keyframes animate {
@@ -29,7 +29,7 @@
 	content: "";
 	position: absolute;
 	inset: 4px;
-	background: #0e1538;
+	background: #12161d;
 }
 
 .action {

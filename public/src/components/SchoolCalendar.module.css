@@ -12,4 +12,6 @@
 	height: 50vh;
 	width: 90vw;
 	z-index: 1;
+	background-color: #0352fc;
+	box-shadow: 0 0 10px #0352fc, 0 0 30px #0352fc, 0 0 50px #0352fc;
 }

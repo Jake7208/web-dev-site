@@ -5,12 +5,25 @@
 	font-size: 45px;
 	margin-bottom: -5px;
 	text-align: center;
+	background-color:grey;
+	padding: 25px;
 }
 
 .banner {
 	display: flex;
 	justify-content: center;
-	flex-direction: column;
-	margin-left: 20px;
+	/* flex-direction: column; */
+	/* margin: 3em; */
 	text-align: center;
+	background-color: red;
+	padding:2em;
+	padding-left: 50px;
+	flex-wrap: wrap;
+}
+
+.column {
+	/* background-color: purple; */
+	color: white;
+	padding-left: 3em;
+	/* background-color: blue; */
 }

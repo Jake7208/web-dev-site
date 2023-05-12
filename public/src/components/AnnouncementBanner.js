@@ -21,17 +21,19 @@ const AnnouncementBanner = () => {
 	}
 
 	return (
+		<div className="testDiv">
+		<h3 className={classes.announcements}>Announcements</h3>
 		<div className={classes.banner}>
-			<h3 className={classes.announcements}>Announcements</h3>
 			{posts.map((post) => {
 				return (
-					<div key={post.id}>
+					<div className={classes.column} key={post.id}>
 						<h2>{post.title}</h2>
 						<p>{post.description}</p>
 						<p>{post.date}</p>
 					</div>
 				);
 			})}
+			</div>
 		</div>
 	);
 };

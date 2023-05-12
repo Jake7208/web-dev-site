@@ -1,6 +1,6 @@
 .callTo {
 	position: relative;
-	width: 85vw;
+	width: 90vw;
 	height: 80px;
 	display: flex;
 	justify-content: center;
@@ -12,7 +12,7 @@
 .callTo::before {
 	content: "";
 	position: absolute;
-	width: 85vw;
+	width: 90vw;
 	height: 200%;
 	background: linear-gradient(#1995fa, #fa195c);
 	animation: animate 4s linear infinite;

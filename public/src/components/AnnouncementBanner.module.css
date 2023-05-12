@@ -3,14 +3,84 @@
 .announcements {
 	font-family: "Asul";
 	font-size: 45px;
-	margin-bottom: -5px;
+	margin-bottom: 5px;
 	text-align: center;
 }
 
 .banner {
 	display: flex;
 	justify-content: center;
+	align-items: center;
 	flex-direction: column;
 	margin-left: 20px;
 	text-align: center;
+	background-color: #1e2430c7;
+	width: 90vw;
+	/* height: 50vh; */
+}
+
+.carousel {
+	overflow: hidden;
+	width: 700px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.inner {
+	white-space: nowrap;
+	transition: transform 0.3s;
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.carouselItem {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	height: 350px;
+	background-color: #91a0a1;
+}
+
+.carouselItem h2 {
+	font-size: 1.75rem;
+	margin: 40px 0 40px 0;
+	padding: 0 20px 0 20px;
+	white-space: normal;
+	color: #5981a7;
+}
+
+.cButtons {
+	display: flex;
+	justify-content: space-evenly;
+}
+
+.arrow {
+	background: none;
+	border: none;
+	cursor: pointer;
+	margin-top: 20px;
+	font-size: 40px;
+	color: #03cafc;
+}
+.indicators {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	margin-top: 20px;
+}
+
+.iButtons {
+	background: none;
+	border: none;
+	cursor: pointer;
+	font-size: 25px;
+}
+
+.indicatorSymbol {
+	color: #1494b4;
+}
+.indicatorSymbolActive {
+	color: #03cafc;
+	box-shadow: 0 0 10px #03cafc, 0 0 40px #03cafc, 0 0 80px #03cafc;
+	border-radius: 50%;
 }

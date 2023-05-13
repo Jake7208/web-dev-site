@@ -5,6 +5,13 @@
 	font-size: 45px;
 	margin-bottom: -5px;
 	text-align: center;
+	padding: 1em;
+	background: linear-gradient(to right, #868f96 0%, #596164 100%);
+	margin-bottom:1em;
+}
+.container {
+	display: flex;
+	flex-direction: column;;
 }
 
 .cal {
@@ -12,4 +19,8 @@
 	height: 50vh;
 	width: 90vw;
 	z-index: 1;
+	max-width: 1000px;
+	margin: 0 auto;
+
+	
 }

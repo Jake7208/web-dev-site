@@ -20,17 +20,20 @@ const WebEvents = () => {
 	}
 
 	return (
+		<div>
+
+		<h3 className={classes.events}>Web Events</h3>
 		<div className={classes.news}>
-			<h3 className={classes.events}>Web Events</h3>
 			{posts.map((post) => {
 				return (
-					<div key={post.id}>
-						<h1>{post.title}</h1>
-						<h2>{post.description}</h2>
+					<div className={classes.columns} key={post.id}>
+						<h2>{post.title}</h2>
+						<p>{post.description}</p>
 						<p>{post.date}</p>
 					</div>
 				);
 			})}
+			</div>
 		</div>
 	);
 };

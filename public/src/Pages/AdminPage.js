@@ -8,6 +8,8 @@ import TabNavItem from "./TabNavItem";
 import TabContent from "./TabContent";
 import "./AdminPage.css";
 import useFetch from "../Hooks/useFetch";
+import Button from '@mui/material/Button';
+import TextField from '@mui/material/TextField';
 
 const AdminPage = () => {
   const [activeTab, setActiveTab] = useState("tab1");
@@ -97,27 +99,35 @@ const AdminPage = () => {
     // login form goes here
     return (
       <div className="container">
+        <div className="innerContainer">
+
         <form onSubmit={handleLogin}>
           <h2>Admin Login</h2>
-          <label htmlFor="username">Username:</label>
-          <input
+          {/* <label htmlFor="username">Username:</label> (don't know if it's a huge deal if
+          i put the label tag into the textfield for mui styling) */}
+          
+          <TextField
+            label="username"
             type="text"
             id="username"
             name="username"
             value={username}
             onChange={(event) => setUsername(event.target.value)}
           />
-          <label htmlFor="password">Password:</label>
-          <input
+          {/* <label htmlFor="password">Password:</label> */}
+          <TextField
+            
+            label="Password"
             type="password"
             id="password"
             name="password"
             value={password}
             onChange={(event) => setPassword(event.target.value)}
-          />
-          <button type="submit">Log in</button>
+            />
+          <Button variant="contained" type="submit">Log in</Button>
           {errorMsg && <p>{errorMsg}</p>}
         </form>
+          </div>
       </div>
     );
   }
@@ -131,7 +141,7 @@ const AdminPage = () => {
       <SideNavBar />
       <div className="Tabs">
         <ul className="nav">
-          <TabNavItem
+          <TabNavItem 
             title="Announcements"
             id="tab1"
             activeTab={activeTab}

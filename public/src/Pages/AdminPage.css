@@ -1,10 +1,22 @@
 .admin {
-  display: flex;
+  /* display: flex; */
   justify-content: center;
   margin-left: 20px;
 }
 .container {
   display: flex;
+}
+
+
+.innerContainer{
+  background-color: lightblue;
+  padding:8em;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  margin-top: 12em;
+  border-radius: 25px;
+  flex-direction: column;
 }
 /*working on gap*/
 .Tabs {

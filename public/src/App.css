@@ -1,3 +1,7 @@
+body {
+	background: linear-gradient(to right, #2c5364, #0f2027);
+}
+
 .row {
 	display: flex;
 	justify-content: center;

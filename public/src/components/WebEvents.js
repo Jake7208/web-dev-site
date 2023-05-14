@@ -22,15 +22,17 @@ const WebEvents = () => {
 	return (
 		<div className={classes.news}>
 			<h3 className={classes.events}>Web Events</h3>
-			{posts.map((post) => {
-				return (
-					<div key={post.id}>
-						<h1>{post.title}</h1>
-						<h2>{post.description}</h2>
-						<p>{post.date}</p>
-					</div>
-				);
-			})}
+			<div className={[classes.main, classes.center].join(" ")}>
+				{posts.map((post) => {
+					return (
+						<div key={post.id}>
+							<h1>{post.title}</h1>
+							<h2>{post.description}</h2>
+							<p>{post.date}</p>
+						</div>
+					);
+				})}
+			</div>
 		</div>
 	);
 };

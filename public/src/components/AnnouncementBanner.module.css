@@ -30,16 +30,23 @@
 .inner {
 	white-space: nowrap;
 	transition: transform 0.3s;
-	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+	/* box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); */
 }
 
 .carouselItem {
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
-	height: 350px;
+	height: 250px;
 	background-color: #91a0a1;
 }
+
+/* .carouselItem::after {
+	content: "";
+	position: absolute;
+	inset: 4px;
+	background: #12161d;
+} */
 
 .carouselItem h2 {
 	font-size: 1.75rem;

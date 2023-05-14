@@ -6,7 +6,8 @@
 	width: 300px;
 	height: 100vh;
 	position: fixed;
-	background-color: #12161d;
+	/* background-color: #12161d; */
+	background: linear-gradient(to right, #2c5364, #0f2027);
 	z-index: 10;
 	transition: 0.4s;
 	transform: translateX(0px);
@@ -29,7 +30,7 @@
 .menu-item,
 .nav-footer {
 	/* background-color: #1a212b; */
-	background-color: #10141a;
+	/* background-color: #10141a; */
 }
 
 .nav-heading {

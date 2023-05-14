@@ -2,6 +2,8 @@ import React from "react";
 import classes from "./WebEvents.module.css";
 import useFetch from "../Hooks/useFetch";
 
+import EventCard from "./EventCard";
+
 const WebEvents = () => {
 	const { data: posts, error } = useFetch(
 		`${process.env.REACT_APP_BACKEND_URL}/events/getAll`,
@@ -24,13 +26,7 @@ const WebEvents = () => {
 			<h3 className={classes.events}>Web Events</h3>
 			<div className={[classes.main, classes.center].join(" ")}>
 				{posts.map((post) => {
-					return (
-						<div key={post.id}>
-							<h1>{post.title}</h1>
-							<h2>{post.description}</h2>
-							<p>{post.date}</p>
-						</div>
-					);
+					return <EventCard post={post} />;
 				})}
 			</div>
 		</div>

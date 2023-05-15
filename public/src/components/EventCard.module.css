@@ -10,6 +10,7 @@
 	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.288);
 	border-radius: 23px;
 	flex-direction: column;
+	background-color: #35677c;
 	color: white;
 	position: relative;
 	overflow: hidden;
@@ -41,6 +42,12 @@
 
 .active {
 	transform: translate(0) rotate(0);
+}
+
+.leftContainer {
+	width: 250px;
+	height: 250px;
+	background-color: #182c34;
 }
 
 .leftContainer .details div {

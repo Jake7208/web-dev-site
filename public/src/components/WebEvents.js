@@ -22,6 +22,9 @@ const WebEvents = () => {
 	}
 
 	return (
+		<div>
+
+		<h3 className={classes.events}>Web Events</h3>
 		<div className={classes.news}>
 			<h3 className={classes.events}>Web Events</h3>
 			<div className={[classes.main, classes.center].join(" ")}>

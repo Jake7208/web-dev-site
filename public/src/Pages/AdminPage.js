@@ -8,6 +8,9 @@ import TabNavItem from "./TabNavItem";
 import TabContent from "./TabContent";
 import "./AdminPage.css";
 import useFetch from "../Hooks/useFetch";
+import Button from '@mui/material/Button';
+import TextField from '@mui/material/TextField';
+
 
 const AdminPage = () => {
   const [activeTab, setActiveTab] = useState("tab1");
@@ -97,27 +100,59 @@ const AdminPage = () => {
     // login form goes here
     return (
       <div className="container">
+        <div className="innerContainer">
+
         <form onSubmit={handleLogin}>
           <h2>Admin Login</h2>
-          <label htmlFor="username">Username:</label>
-          <input
-            type="text"
-            id="username"
-            name="username"
-            value={username}
-            onChange={(event) => setUsername(event.target.value)}
-          />
-          <label htmlFor="password">Password:</label>
-          <input
-            type="password"
-            id="password"
-            name="password"
-            value={password}
-            onChange={(event) => setPassword(event.target.value)}
-          />
-          <button type="submit">Log in</button>
+          {/* <label htmlFor="username">Username:</label> (don't know if it's a huge deal if
+          i put the label tag into the textfield for mui styling) */}
+          <div className="inputs">
+            
+            <TextField 
+              sx={{
+                // size: "large",
+                // color: "white",
+                margin: "0.5em",
+                width: "20em"
+              }}
+              className="field"
+              label="username"
+              type="text"
+              id="username"
+              name="username"
+              value={username}
+              onChange={(event) => setUsername(event.target.value)}
+            />
+            {/* <label htmlFor="password">Password:</label> */}
+            <TextField className="field"
+              sx={{
+                // size: "large",
+                // color: "white",
+                margin: "0.5em",
+                width: "20em"
+              }}
+              label="Password"
+              type="password"
+              id="password"
+              name="password"
+              value={password}
+              onChange={(event) => setPassword(event.target.value)}
+              />
+              </div>
+              <div className="theButton">
+            <Button
+            sx={{
+              width: "25px",
+              padding: "0.5em",
+              marginRight: ""
+              
+            }}
+            
+            className="field2" size="small" variant="contained" type="submit">Log in</Button>
+          </div>
           {errorMsg && <p>{errorMsg}</p>}
         </form>
+          </div>
       </div>
     );
   }
@@ -131,7 +166,7 @@ const AdminPage = () => {
       <SideNavBar />
       <div className="Tabs">
         <ul className="nav">
-          <TabNavItem
+          <TabNavItem 
             title="Announcements"
             id="tab1"
             activeTab={activeTab}

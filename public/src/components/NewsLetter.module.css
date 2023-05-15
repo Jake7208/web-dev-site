@@ -5,6 +5,8 @@
 	font-size: 45px;
 	margin-bottom: 25px;
 	text-align: center;
+	background: linear-gradient(to right, #868f96 0%, #596164 100%);
+	padding: 1em;
 }
 
 .news {

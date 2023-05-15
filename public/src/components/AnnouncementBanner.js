@@ -35,6 +35,8 @@ const AnnouncementBanner = () => {
 	};
 
 	return (
+		<div className="testDiv">
+		<h3 className={classes.announcements}>Announcements</h3>
 		<div className={classes.banner}>
 			<h3 className={classes.announcements}>Announcements</h3>
 			<div className={classes.carousel}>

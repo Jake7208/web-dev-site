@@ -5,6 +5,31 @@
 }
 .container {
   display: flex;
+  
+}
+
+.inputs {
+  display: flex;
+  flex-direction: column;
+  /* padding: 15px; */
+  /* margin: 5em; */
+  
+  /* background-color: red; */
+}
+
+.theButton {
+  margin-left: 16.5em;
+}
+
+.innerContainer{
+  background-color: lightblue;
+  padding:8em;
+  /* align-items: center; */
+  /* justify-content: center; */
+  /* flex-direction: column; */
+  margin: 0 auto;
+  margin-top: 12em;
+  border-radius: 25px;
 }
 /*working on gap*/
 .Tabs {
@@ -15,8 +40,8 @@
   margin: 3.5rem auto 1.5rem;
   padding: 2rem 1rem;
   color: #e8f0f2;
-  border-radius: 2rem;
-  @media (max-width: 769px) {
+  border-radius: 2rem;x
+  @media(max-width: 769px) {
     padding: 2rem 0;
   }
 }

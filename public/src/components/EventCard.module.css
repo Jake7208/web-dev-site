@@ -16,10 +16,10 @@
 	overflow: hidden;
 }
 
-.title {
+.name {
 	margin-top: 10px;
-	font-size: 2rem;
-	color: rgba(255, 255, 255, 0.555);
+	font-size: 25px;
+	color: rgba(255, 255, 255, 0.7);
 }
 
 .arrow,
@@ -36,6 +36,10 @@
 	cursor: pointer;
 }
 
+.arrow > .fas {
+	transform: rotate(45deg);
+}
+
 .off {
 	transform: translate(-80%, -80%) rotate(90deg);
 }
@@ -45,9 +49,12 @@
 }
 
 .leftContainer {
-	width: 250px;
-	height: 250px;
+	position: absolute;
 	background-color: #182c34;
+	width: 100%;
+	height: 100%;
+	border-radius: 23px;
+	transition: all 0.4s;
 }
 
 .leftContainer .details div {
@@ -59,9 +66,15 @@
 }
 
 .leftContainer .more > .tilt {
-	color: #cfcfcf;
+	color: #4ed2d6;
 	cursor: pointer;
 	transition: all 0.4s;
+	padding: 10px 0 0 0;
+	transform: rotate(90deg);
+}
+
+.leftContainer .more p {
+	color: #4ed2d6;
 }
 
 .leftContainer .more > .tilt:hover {

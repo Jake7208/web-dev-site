@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import classes from "./EventCard.module.css";
 import { FaArrowRight, FaTimes } from "react-icons/fa";
 import { MdUnfoldMoreDouble } from "react-icons/md";
+
+import classes from "./EventCard.module.css";
 
 const EventCard = ({ post }) => {
 	const [detailActive, setDetailActive] = useState(false);
@@ -27,6 +28,7 @@ const EventCard = ({ post }) => {
 				</div>
 				<div className={classes.more}>
 					<MdUnfoldMoreDouble className={classes.tilt} />
+					<p>More Info...</p>
 				</div>
 				<div className={[classes.cancel, classes.center].join(" ")}>
 					<FaTimes className={classes.fas} onClick={() => setDetailActive(false)} />

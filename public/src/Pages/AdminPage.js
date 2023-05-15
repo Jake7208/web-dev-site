@@ -11,6 +11,7 @@ import useFetch from "../Hooks/useFetch";
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 
+
 const AdminPage = () => {
   const [activeTab, setActiveTab] = useState("tab1");
   const [isLoading, setIsLoading] = useState(true);
@@ -105,26 +106,50 @@ const AdminPage = () => {
           <h2>Admin Login</h2>
           {/* <label htmlFor="username">Username:</label> (don't know if it's a huge deal if
           i put the label tag into the textfield for mui styling) */}
-          
-          <TextField
-            label="username"
-            type="text"
-            id="username"
-            name="username"
-            value={username}
-            onChange={(event) => setUsername(event.target.value)}
-          />
-          {/* <label htmlFor="password">Password:</label> */}
-          <TextField
+          <div className="inputs">
             
-            label="Password"
-            type="password"
-            id="password"
-            name="password"
-            value={password}
-            onChange={(event) => setPassword(event.target.value)}
+            <TextField 
+              sx={{
+                // size: "large",
+                // color: "white",
+                margin: "0.5em",
+                width: "20em"
+              }}
+              className="field"
+              label="username"
+              type="text"
+              id="username"
+              name="username"
+              value={username}
+              onChange={(event) => setUsername(event.target.value)}
             />
-          <Button variant="contained" type="submit">Log in</Button>
+            {/* <label htmlFor="password">Password:</label> */}
+            <TextField className="field"
+              sx={{
+                // size: "large",
+                // color: "white",
+                margin: "0.5em",
+                width: "20em"
+              }}
+              label="Password"
+              type="password"
+              id="password"
+              name="password"
+              value={password}
+              onChange={(event) => setPassword(event.target.value)}
+              />
+              </div>
+              <div className="theButton">
+            <Button
+            sx={{
+              width: "25px",
+              padding: "0.5em",
+              marginRight: ""
+              
+            }}
+            
+            className="field2" size="small" variant="contained" type="submit">Log in</Button>
+          </div>
           {errorMsg && <p>{errorMsg}</p>}
         </form>
           </div>

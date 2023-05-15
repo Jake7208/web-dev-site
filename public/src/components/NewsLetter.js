@@ -20,7 +20,7 @@ const NewsLetter = () => {
   return (
     <div className={classes.newscontainer}>
       <h3 className={classes.newsletter}>Newsletter</h3>
-      <div>
+      <div className={classes.viewport}>
         <iframe src={newslettersArray[0].url} className={classes.news}></iframe>
         <p>{newslettersArray[0].title}</p>
       </div>

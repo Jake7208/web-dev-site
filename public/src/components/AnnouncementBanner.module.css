@@ -5,6 +5,9 @@
 	font-size: 45px;
 	margin-bottom: 5px;
 	text-align: center;
+	/* background-color:grey; */
+	padding: 25px;
+	background: linear-gradient(to right, #868f96 0%, #596164 100%);
 }
 
 .banner {
@@ -93,4 +96,11 @@
 	color: #03cafc;
 	box-shadow: 0 0 10px #03cafc, 0 0 40px #03cafc, 0 0 80px #03cafc;
 	border-radius: 50%;
+}
+
+.column {
+	/* background-color: purple; */
+	color: white;
+	padding-left: 3em;
+	/* background-color: blue; */
 }

@@ -25,7 +25,7 @@ const ViewVideos = () => {
 				<div>
 					{videoURLs.map((v) => (
 						<>
-							<p>{v.title}</p>
+							<h1>{v.title}</h1>
 							<iframe
 								width="560"
 								height="315"

@@ -26,9 +26,9 @@ const AnnouncementBanner = () => {
 
 	const updateIndex = (newIndex) => {
 		if (newIndex < 0) {
-			newIndex = 0;
-		} else if (newIndex >= posts.length) {
 			newIndex = posts.length - 1;
+		} else if (newIndex >= posts.length) {
+			newIndex = 0;
 		}
 
 		setActiveIndex(newIndex);

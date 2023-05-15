@@ -1,5 +1,12 @@
-body {
+/* body {
 	background: linear-gradient(to left, #2c5364, #0f2027);
+} */
+
+.home {
+	background: linear-gradient(to left, #2c5364, #0f2027);
+	background-size: cover;
+	min-width: 100%;
+	min-height: 100%;
 }
 
 .row {

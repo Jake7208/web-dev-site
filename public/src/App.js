@@ -8,7 +8,7 @@ import ComeJoinUs from "./components/ComeJoinUs";
 
 function App() {
 	return (
-		<div>
+		<div className="home">
 			<SideNavBar />
 			<div className="row">
 				<AnnouncementBanner />

@@ -1,27 +1,48 @@
-.admin {
-	display: flex;
-	justify-content: center;
-	margin-left: 20px;
-}
 .container {
 	display: flex;
+	background-image: url("https://c.pxhere.com/images/52/47/a2047ea538688d7b3d3bfabe3ce7-1447929.jpg!d");
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 100vh;
+	width: 100vw;
+}
+
+.innerContainer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: rgba(173, 216, 230, 0.651);
+	padding: 8em;
+	margin: 0 auto;
+	margin-top: 12em;
+	border-radius: 25px;
+}
+
+h2 {
+	font-size: 30px;
+	text-align: center;
 }
 
 .inputs {
 	display: flex;
 	flex-direction: column;
+	line-height: 30px;
+}
+
+.inputs .field {
+	padding: 15px;
+	margin: 10px;
+	border-radius: 10px;
+}
+
+.inputs label {
+	font-size: 20px;
 }
 
 .theButton {
+	padding: 5px;
 	margin-left: 16.5em;
-}
-
-.innerContainer {
-	background-color: lightblue;
-	padding: 8em;
-	margin: 0 auto;
-	margin-top: 12em;
-	border-radius: 25px;
+	border-radius: 10px;
 }
 
 .Tabs {

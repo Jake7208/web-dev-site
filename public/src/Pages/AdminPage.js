@@ -6,7 +6,7 @@ import ResourceTab from "./AllTabs/ResourceTab";
 import VideoTab from "./AllTabs/VideoTab";
 import TabNavItem from "./TabNavItem";
 import TabContent from "./TabContent";
-import "./AdminPage.css";
+import classes from "./AdminPage.module.css";
 import useFetch from "../Hooks/useFetch";
 
 const AdminPage = () => {
@@ -96,14 +96,14 @@ const AdminPage = () => {
 	if (status === 401) {
 		// login form goes here
 		return (
-			<div className="container">
-				<div className="innerContainer">
+			<div className={classes.container}>
+				<div className={classes.innerContainer}>
 					<form onSubmit={handleLogin}>
 						<h2>Admin Login</h2>
-						<label htmlFor="username">Username:</label>
-						<div className="inputs">
+						<div className={classes.inputs}>
+							<label htmlFor="username">Username:</label>
 							<input
-								className="field"
+								className={classes.field}
 								label="username"
 								type="text"
 								id="username"
@@ -113,7 +113,7 @@ const AdminPage = () => {
 							/>
 							<label htmlFor="password">Password:</label>
 							<input
-								className="field"
+								className={classes.field}
 								label="Password"
 								type="password"
 								id="password"
@@ -124,7 +124,7 @@ const AdminPage = () => {
 						</div>
 						<div>
 							<button
-								className="theButton"
+								className={classes.theButton}
 								size="small"
 								variant="contained"
 								type="submit"
@@ -144,10 +144,10 @@ const AdminPage = () => {
 	}
 
 	return (
-		<div className="container">
+		<div className={classes.container}>
 			<SideNavBar />
-			<div className="Tabs">
-				<ul className="nav">
+			<div className={classes.Tabs}>
+				<ul className={classes.nav}>
 					<TabNavItem
 						title="Announcements"
 						id="tab1"
@@ -174,7 +174,7 @@ const AdminPage = () => {
 					/>
 				</ul>
 
-				<div className="outlet">
+				<div className={classes.outlet}>
 					<TabContent id="tab1" activeTab={activeTab}>
 						<AnnouncementTab data={data.announcements} />
 					</TabContent>

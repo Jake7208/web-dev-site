@@ -35,62 +35,62 @@ const AnnouncementBanner = () => {
 	};
 
 	return (
-		<div className="testDiv">
-		<h3 className={classes.announcements}>Announcements</h3>
-		<div className={classes.banner}>
-			<h3 className={classes.announcements}>Announcements</h3>
-			<div className={classes.carousel}>
-				<div
-					className={classes.inner}
-					style={{ transform: `translate(-${activeIndex * 100}%)` }}
-				>
-					{posts.map((post) => {
-						return (
-							<div key={post.id} className={classes.carouselItem}>
-								<h2>{post.title}</h2>
-								<p>{post.description}</p>
-								<p>{post.date}</p>
-							</div>
-						);
-					})}
-				</div>
-				<div className={classes.cButtons}>
-					<button
-						onClick={() => {
-							updateIndex(activeIndex - 1);
-						}}
-						className={classes.arrow}
+		<div>
+			<div className={classes.banner}>
+				<h3 className={classes.announcements}>Announcements</h3>
+				<div className={classes.carousel}>
+					<div
+						className={classes.inner}
+						style={{ transform: `translate(-${activeIndex * 100}%)` }}
 					>
-						<TbArrowBigLeftLines />
-					</button>
-					<div className={classes.indicators}>
-						{posts.map((item, index) => {
+						{posts.map((post) => {
 							return (
-								<button
-									onClick={() => {
-										updateIndex(index);
-									}}
-									className={classes.iButtons}
-								>
-									<RiRadioButtonLine
-										className={`${
-											index === activeIndex
-												? [classes.indicatorSymbolActive]
-												: [classes.indicatorSymbol]
-										}`}
-									/>
-								</button>
+								<div key={post.id} className={classes.carouselItem}>
+									<h2>{post.title}</h2>
+									<p>{post.description}</p>
+									<p>{post.date}</p>
+								</div>
 							);
 						})}
 					</div>
-					<button
-						onClick={() => {
-							updateIndex(activeIndex + 1);
-						}}
-						className={classes.arrow}
-					>
-						<TbArrowBigRightLines />
-					</button>
+					<div className={classes.cButtons}>
+						<button
+							onClick={() => {
+								updateIndex(activeIndex - 1);
+							}}
+							className={classes.arrow}
+						>
+							<TbArrowBigLeftLines />
+						</button>
+						<div className={classes.indicators}>
+							{posts.map((item, index) => {
+								return (
+									<button
+										onClick={() => {
+											updateIndex(index);
+										}}
+										className={classes.iButtons}
+									>
+										<RiRadioButtonLine
+											className={`${
+												index === activeIndex
+													? [classes.indicatorSymbolActive]
+													: [classes.indicatorSymbol]
+											}`}
+										/>
+									</button>
+								);
+							})}
+						</div>
+						<button
+							onClick={() => {
+								updateIndex(activeIndex + 1);
+							}}
+							className={classes.arrow}
+						>
+							<TbArrowBigRightLines />
+						</button>
+					</div>
 				</div>
 			</div>
 		</div>

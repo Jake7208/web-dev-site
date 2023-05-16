@@ -23,15 +23,14 @@ const WebEvents = () => {
 
 	return (
 		<div>
-
-		<h3 className={classes.events}>Web Events</h3>
-		<div className={classes.news}>
 			<h3 className={classes.events}>Web Events</h3>
+			{/* <div className={classes.news}> */}
 			<div className={[classes.main, classes.center].join(" ")}>
 				{posts.map((post) => {
 					return <EventCard post={post} />;
 				})}
 			</div>
+			{/* </div> */}
 		</div>
 	);
 };

@@ -7,12 +7,9 @@
 	margin-bottom: -5px;
 	margin-top: -5;
 	text-align: center;
-	/* background-color: grey; */
-	background: linear-gradient(to right, #868f96 0%, #596164 100%);
 }
 
-.news{
-	background-color: red;
+.news {
 	padding: 15px;
 	color: white;
 	display: flex;
@@ -24,7 +21,6 @@
 	/* margin: 3em; */
 	/* background-color: red; */
 	/* padding: 2em; */
-	background: linear-gradient(98.3deg, rgb(0, 0, 0) 10.6%, rgb(255, 0, 0) 97.7%);
 }
 
 .center {

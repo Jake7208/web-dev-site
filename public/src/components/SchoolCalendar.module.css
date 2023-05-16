@@ -6,12 +6,11 @@
 	margin-bottom: 25px;
 	text-align: center;
 	padding: 1em;
-	background: linear-gradient(to right, #868f96 0%, #596164 100%);
-	margin-bottom:1em;
+	margin-bottom: 1em;
 }
 .container {
 	display: flex;
-	flex-direction: column;;
+	flex-direction: column;
 }
 
 .cal {

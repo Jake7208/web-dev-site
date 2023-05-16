@@ -19,7 +19,7 @@ const ViewVideos = () => {
 	}
 
 	return (
-		<div>
+		<div className={classes.page}>
 			<SideNavBar />
 			<div className={classes.container}>
 				<div>
@@ -34,6 +34,7 @@ const ViewVideos = () => {
 								frameborder="0"
 								allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
 								allowfullscreen
+								className={classes.videoLight}
 							></iframe>
 						</>
 					))}

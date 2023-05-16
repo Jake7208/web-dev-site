@@ -1,5 +1,28 @@
+@import url("https://fonts.googleapis.com/css2?family=Rampart+One&display=swap");
+
+.page {
+	background: #0f2027;
+	background-size: cover;
+	min-width: 100%;
+	min-height: 100%;
+}
+
 .container {
 	display: flex;
 	justify-content: center;
+	text-align: center;
 	margin-left: 20px;
+}
+
+.container h1 {
+	font-family: "Rampart One", cursive;
+	font-size: 50px;
+	color: #db192f;
+	margin-bottom: 15px;
+	padding-top: 10px;
+}
+
+.videoLight {
+	background-color: #fa1935;
+	box-shadow: 0 0 10px #fa1935, 0 0 15px #fa1935, 0 0 20px #fa1935;
 }

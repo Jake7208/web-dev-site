@@ -43,7 +43,7 @@ const AllNewsletter = () => {
 	}
 
 	return (
-		<div>
+		<div className={classes.outerBox}>
 			<SideNavBar />
 			<div className={classes.container}>
 				<h3>Newsletter Archive</h3>

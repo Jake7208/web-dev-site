@@ -1,3 +1,10 @@
+.outerBox {
+	background: linear-gradient(to left, #a7d4e7, #397690);
+	background-size: cover;
+	min-width: 100%;
+	min-height: 100%;
+}
+
 .container {
 	display: flex;
 	justify-content: center;
@@ -6,11 +13,16 @@
 	margin-left: 20px;
 }
 
+.container h3 {
+	font-size: 50px;
+	margin-bottom: 5px;
+}
+
 .container a:link {
 	display: flex;
 	justify-content: space-between;
 	color: #1a212b;
 	text-decoration: none;
 	padding: 18px;
-	font-size: large;
+	font-size: 20px;
 }

@@ -9,19 +9,15 @@
 	text-align: center;
 }
 
-.news {
+/* .news {
 	padding: 15px;
 	color: white;
 	display: flex;
 	justify-content: center;
 	text-align: center;
 	flex-wrap: wrap;
-	/* flex-direction: column; */
-	/* padding-left: 50px; */
-	/* margin: 3em; */
-	/* background-color: red; */
-	/* padding: 2em; */
-}
+	
+} */
 
 .center {
 	display: flex;
@@ -32,4 +28,12 @@
 .main {
 	height: 40vh;
 	justify-content: space-around;
+	display: flex;
+	flex-direction: row;
+}
+
+@media (max-width: 1600px) {
+	.main {
+		flex-direction: column;
+	}
 }

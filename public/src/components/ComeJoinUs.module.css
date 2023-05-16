@@ -15,7 +15,7 @@
 	width: 90vw;
 	height: 200%;
 	background: linear-gradient(#1995fa, #fa195c);
-	animation: animate 20s linear infinite;
+	animation: animate 9s linear infinite;
 }
 @keyframes animate {
 	0% {

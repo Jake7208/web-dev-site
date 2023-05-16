@@ -24,7 +24,7 @@ const EventCard = ({ post }) => {
 			>
 				<div className={classes.details}>
 					<div className={classes.description}>{post.description}</div>
-					<div className={classes.date}>{post.date}</div>
+					<div className={classes.description}>{post.date}</div>
 				</div>
 				<div className={classes.more}>
 					<MdUnfoldMoreDouble className={classes.tilt} />

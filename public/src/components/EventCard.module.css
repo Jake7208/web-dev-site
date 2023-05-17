@@ -72,16 +72,16 @@
 }
 
 .leftContainer .more > .tilt {
-	color: #4ed2d6;
+	color: #03cafc;
 	cursor: pointer;
 	transition: all 0.4s;
-	padding: 0 0 10px 40px;
+	padding: 0 0 10px 25px;
 	transform: rotate(90deg);
 	font-size: 30px;
 }
 
 .leftContainer .more p {
-	color: #4ed2d6;
+	color: #03cafc;
 	margin-top: 0;
 }
 
@@ -90,6 +90,6 @@
 }
 
 .leftContainer .more {
-	padding-top: 70px;
+	padding-top: 15px;
 	padding-left: 20px;
 }

@@ -45,14 +45,16 @@ const AllNewsletter = () => {
 
 	return (
 		<div className={classes.outerBox}>
-			<SideNavBar />
-			<div className={classes.container}>
-				<h3>Newsletter Archive</h3>
-				<div>
-					{allnewsletterArray.map((newsletter) => {
-						console.log(newsletter);
-						return <a href={newsletter.url}>{newsletter.title}</a>;
-					})}
+			<div className={classes.innerBox}>
+				<SideNavBar />
+				<div className={classes.container}>
+					<h3>Newsletter Archive</h3>
+					<div>
+						{allnewsletterArray.map((newsletter) => {
+							console.log(newsletter);
+							return <a href={newsletter.url}>{newsletter.title}</a>;
+						})}
+					</div>
 				</div>
 			</div>
 		</div>

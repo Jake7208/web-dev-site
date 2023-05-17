@@ -12,16 +12,19 @@
 	min-height: 100%; */
 }
 
+.innerBox {
+	background-color: rgba(173, 216, 230, 0.651);
+	background-size: cover;
+	height: 100vh;
+	width: 100vw;
+}
+
 .container {
 	display: flex;
 	justify-content: center;
 	flex-direction: column;
 	align-items: center;
 	margin-left: 20px;
-	background-color: rgba(173, 216, 230, 0.651);
-	background-size: cover;
-	height: 100vh;
-	width: 100vw;
 }
 
 .container h3 {

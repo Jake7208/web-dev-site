@@ -1,10 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC&family=Electrolize&family=Orbitron:wght@500&display=swap");
 
 .outerBox {
-	background: linear-gradient(to left, #a7d4e7, #397690);
+	/* background: linear-gradient(to left, #a7d4e7, #397690); */
+	background-image: url(../../public/icons/image-from-rawpixel-id-5927288-jpeg.jpg);
+	background-repeat: no-repeat;
 	background-size: cover;
+	height: 100vh;
+	width: 100vw;
+	/* background-size: cover;
 	min-width: 100%;
-	min-height: 100%;
+	min-height: 100%; */
 }
 
 .container {
@@ -13,6 +18,10 @@
 	flex-direction: column;
 	align-items: center;
 	margin-left: 20px;
+	background-color: rgba(173, 216, 230, 0.651);
+	background-size: cover;
+	height: 100vh;
+	width: 100vw;
 }
 
 .container h3 {

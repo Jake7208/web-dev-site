@@ -1,7 +1,7 @@
 import React from "react";
 import useFetch from "../Hooks/useFetch";
 import SideNavBar from "../components/SideNavBar";
-import classes from "./viewvideos.module.css";
+import classes from "./ViewVideos.module.css";
 
 const ViewVideos = () => {
 	const { data: videoURLs, error } = useFetch(

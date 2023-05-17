@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Electrolize&family=Orbitron:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC&family=Electrolize&family=Orbitron:wght@500&display=swap");
 
 .outerBox {
 	background: linear-gradient(to left, #a7d4e7, #397690);
@@ -17,6 +17,7 @@
 
 .container h3 {
 	font-size: 50px;
+	font-family: "Alegreya Sans SC", sans-serif;
 	margin-bottom: 5px;
 }
 

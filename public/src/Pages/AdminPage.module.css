@@ -1,6 +1,7 @@
 .container {
 	display: flex;
-	background-image: url("https://c.pxhere.com/images/52/47/a2047ea538688d7b3d3bfabe3ce7-1447929.jpg!d");
+	/* background-image: url("https://c.pxhere.com/images/52/47/a2047ea538688d7b3d3bfabe3ce7-1447929.jpg!d"); */
+	background-image: url(../../public/icons/image-from-rawpixel-id-3322383-jpeg.jpg);
 	background-repeat: no-repeat;
 	background-size: cover;
 	height: 100vh;

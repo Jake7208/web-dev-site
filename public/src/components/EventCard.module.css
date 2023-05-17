@@ -8,7 +8,8 @@
 .box {
 	width: 250px;
 	height: 250px;
-	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.288);
+	/* box-shadow: 0 10px 20px rgba(0, 0, 0, 0.288); */
+	box-shadow: 0 0 10px #03cafc, 0 0 15px #03cafc, 0 0 20px #03cafc;
 	border-radius: 23px;
 	flex-direction: column;
 	background-color: #35677c;

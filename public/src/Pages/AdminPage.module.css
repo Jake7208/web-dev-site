@@ -12,9 +12,8 @@
 	justify-content: center;
 	align-items: center;
 	background-color: rgba(173, 216, 230, 0.651);
-	padding: 8em;
-	margin: 0 auto;
-	margin-top: 12em;
+	padding: 6em;
+	margin: 12em 0 12em 0;
 	border-radius: 25px;
 }
 
@@ -33,16 +32,20 @@ h2 {
 	padding: 15px;
 	margin: 10px;
 	border-radius: 10px;
+	font-size: 20px;
 }
 
 .inputs label {
 	font-size: 20px;
+	font-weight: bold;
 }
 
 .theButton {
-	padding: 5px;
-	margin-left: 16.5em;
+	background-color: #03cafcd0;
+	padding: 10px;
+	margin-left: 16em;
 	border-radius: 10px;
+	font-size: 20px;
 }
 
 .Tabs {

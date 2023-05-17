@@ -31,6 +31,10 @@
 	font-family: "Orbitron", sans-serif;
 }
 
+.container a:visited {
+	color: blue;
+}
+
 .container a:hover {
 	color: aliceblue;
 	font-family: "Electrolize", sans-serif;

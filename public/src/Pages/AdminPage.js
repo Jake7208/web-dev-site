@@ -129,7 +129,7 @@ const AdminPage = () => {
 								variant="contained"
 								type="submit"
 							>
-								Log in
+								Login
 							</button>
 						</div>
 						{errorMsg && <p>{errorMsg}</p>}

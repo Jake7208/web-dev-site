@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Electrolize&family=Orbitron:wght@500&display=swap");
+
 .outerBox {
 	background: linear-gradient(to left, #a7d4e7, #397690);
 	background-size: cover;
@@ -25,4 +27,10 @@
 	text-decoration: none;
 	padding: 18px;
 	font-size: 20px;
+	font-family: "Orbitron", sans-serif;
+}
+
+.container a:hover {
+	color: aliceblue;
+	font-family: "Electrolize", sans-serif;
 }

@@ -21,6 +21,19 @@
 	/* height: 50vh; */
 }
 
+.wrapper {
+	width: 80vw;
+	height: 400px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	/* box-shadow: 5px 5px 25px 0px rgba(46, 61, 73, 0.2); */
+	box-shadow: 0 0 10px #03cafc, 0 0 20px #03cafc, 0 0 40px #03cafc;
+	border-radius: 20px;
+	/* background-color: rgb(28, 50, 78); */
+	background: linear-gradient(to right, #2c5364, #0f2027);
+}
+
 .carousel {
 	max-width: 700px;
 	width: 70vw;

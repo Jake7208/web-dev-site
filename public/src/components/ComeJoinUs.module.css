@@ -8,6 +8,7 @@
 	background: #12161d;
 	overflow: hidden;
 	border-radius: 20px;
+	margin-top: 20px;
 }
 .callTo::before {
 	content: "";

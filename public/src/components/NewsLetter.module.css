@@ -3,9 +3,26 @@
 .newsletter {
 	font-family: "Asul";
 	font-size: 45px;
-	margin-bottom: 25px;
 	text-align: center;
-	padding: 1em;
+	padding-top: 30px;
+	margin-bottom: 20px;
+}
+
+/*looking at a design similar to carousel*/
+/* .viewport {
+	width: 90vw;
+	height: 800px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	box-shadow: 0 0 10px #03cafc, 0 0 20px #03cafc, 0 0 40px #03cafc;
+	border-radius: 20px;
+	background: linear-gradient(to right, #2c5364, #0f2027);
+} */
+
+.viewport p {
+	color: azure;
+	padding: 0 0 30px 20px;
 }
 
 .news {

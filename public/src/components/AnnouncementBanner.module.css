@@ -50,10 +50,8 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	/* box-shadow: 5px 5px 25px 0px rgba(46, 61, 73, 0.2); */
 	box-shadow: 0 0 10px #03cafc, 0 0 20px #03cafc, 0 0 40px #03cafc;
 	border-radius: 20px;
-	/* background-color: rgb(28, 50, 78); */
 	background: linear-gradient(to right, #2c5364, #0f2027);
 }
 
@@ -77,14 +75,10 @@
 	align-items: center;
 	justify-content: center;
 	height: 250px;
-	/* background-color: #91a0a1; */
 	min-width: 100%;
 	width: 100%;
-	/* background-color: rgb(25, 68, 68); */
-	background-color:/* #18323d*/ #366579;
+	background-color: #366579;
 	box-shadow: inset 0 0 20px 10px rgb(196, 239, 245), inset 0 0 90px #03cafc;
-	/* box-shadow: inset 0px -25px 20px -20px #03cafc; */
-	/* box-shadow: inset 0px -25px 20px -20px rgb(196, 239, 245); */
 }
 
 .carouselItem h2 {
@@ -136,8 +130,6 @@
 }
 
 .column {
-	/* background-color: purple; */
 	color: white;
 	padding-left: 3em;
-	/* background-color: blue; */
 }

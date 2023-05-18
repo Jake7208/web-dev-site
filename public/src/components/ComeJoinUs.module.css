@@ -1,9 +1,8 @@
 .callTo {
 	position: relative;
 	width: 30vw;
-	height: 100px;
+	padding: 15px 10px 15px 10px;
 	display: flex;
-	/* justify-content: center; */
 	align-items: center;
 	align-self: center;
 	background: #12161d;

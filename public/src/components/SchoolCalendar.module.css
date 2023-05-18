@@ -32,7 +32,8 @@
 .cal {
 	filter: invert(0.9) saturate(0.5) hue-rotate(145deg);
 	height: 50vh;
-	width: 90vw;
+	width: 80vw;
+	margin: 0 auto;
 	z-index: 1;
 	background-color: #0352fc;
 	box-shadow: 0 0 10px #0352fc, 0 0 30px #0352fc, 0 0 50px #0352fc;

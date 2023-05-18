@@ -4,7 +4,7 @@
 	font-family: "Asul";
 	padding: 1em;
 	font-size: 45px;
-	margin-bottom: -60px;
+	margin-bottom: -25px;
 	margin-top: -5;
 	text-align: center;
 	text-transform: uppercase;
@@ -32,10 +32,14 @@
 }
 
 .main {
-	height: 40vh;
-	justify-content: space-around;
-	display: flex;
-	flex-direction: row;
+	max-width: 830px;
+	margin: 0 auto;
+	justify-content: center;
+	align-items: center;
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+	gap: 40px;
+	padding-bottom: 30px;
 }
 
 /* @media (max-width: 1600px) {

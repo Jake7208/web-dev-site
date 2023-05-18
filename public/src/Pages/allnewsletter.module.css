@@ -5,18 +5,12 @@
 	background-image: url(../../public/icons/image-from-rawpixel-id-5927288-jpeg.jpg);
 	background-repeat: no-repeat;
 	background-size: cover;
-	height: 100vh;
 	width: 100vw;
-	/* background-size: cover;
-	min-width: 100%;
-	min-height: 100%; */
 }
 
 .innerBox {
-	background-color: rgba(173, 216, 230, 0.651);
-
+	background-color: rgba(173, 216, 230, 0.527);
 	background-size: cover;
-	height: 100vh;
 	width: 100vw;
 }
 
@@ -38,6 +32,7 @@
 	display: flex;
 	justify-content: space-between;
 	color: #1a212b;
+	text-shadow: 2px 4px 4px rgba(46, 91, 173, 0.6);
 	text-decoration: none;
 	padding: 18px;
 	font-size: 20px;
@@ -45,7 +40,7 @@
 }
 
 .container a:visited {
-	color: blue;
+	color: rgb(6, 6, 185);
 }
 
 .container a:hover {

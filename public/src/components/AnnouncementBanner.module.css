@@ -6,6 +6,32 @@
 	margin-bottom: 5px;
 	text-align: center;
 	padding: 25px;
+	text-transform: uppercase;
+	color: #213e4b;
+	letter-spacing: 0.2em;
+	/* background: linear-gradient(
+		to right,
+		#ff5757,
+		#ffb53f,
+		#fff100,
+		#9ae900,
+		#03cafc,
+		#816aff,
+		#ff0040
+	); */
+	background: linear-gradient(
+		to right,
+		#ff0040,
+		#038daf,
+		#ff0040,
+		#03cafc,
+		#ff0040,
+		#038daf,
+		#ff0040
+	);
+	-webkit-background-clip: text;
+	background-clip: text;
+	-webkit-text-stroke: 0.1em transparent;
 }
 
 .banner {

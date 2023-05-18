@@ -7,6 +7,22 @@
 	text-align: center;
 	padding-top: 20px;
 	margin-bottom: 20px;
+	text-transform: uppercase;
+	color: #213e4b;
+	letter-spacing: 0.2em;
+	background: linear-gradient(
+		to right,
+		#ff0040,
+		#038daf,
+		#ff0040,
+		#03cafc,
+		#ff0040,
+		#038daf,
+		#ff0040
+	);
+	-webkit-background-clip: text;
+	background-clip: text;
+	-webkit-text-stroke: 0.1em transparent;
 }
 .container {
 	display: flex;

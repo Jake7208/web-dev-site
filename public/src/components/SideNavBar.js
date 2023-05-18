@@ -108,7 +108,9 @@ const SideNavBar = () => {
 										<a href={link.href} target="_blank" rel="noopener noreferrer">
 											{link.name}
 										</a>
-										{link.icon}
+										<a href={link.href} target="_blank" rel="noopener noreferrer">
+											{link.icon}
+										</a>
 									</Listbox.Option>
 								))}
 							</Listbox.Options>

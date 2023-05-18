@@ -232,9 +232,6 @@
 	margin-left: 15px;
 }
 
-/* .dropdown-options-container {
-} */
-
 .dropdown-options {
 	line-height: 30px;
 	cursor: pointer;
@@ -252,10 +249,7 @@
 .dropdown-options a:visited:hover {
 	color: #225077; /*already showing as visited...is this because of target="_blank"???*/
 }
-/* .dropdown-options:hover {
-	border-radius: 5px;
-	border: 3px solid #cf142b;
-} */
+
 .dropdown-options:hover {
 	color: #225077;
 	background-color: #fa1935;

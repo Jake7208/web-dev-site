@@ -34,16 +34,12 @@
 .main {
 	max-width: 830px;
 	margin: 0 auto;
-	justify-content: center;
-	align-items: center;
+	/* justify-content: center;
+	align-items: center; */
+	place-items: center;
+	align-content: center;
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
 	gap: 40px;
 	padding-bottom: 30px;
 }
-
-/* @media (max-width: 1600px) {
-	.main {
-		flex-direction: column;
-	}
-} */

@@ -22,7 +22,7 @@ const ViewVideos = () => {
 		<div className={classes.page}>
 			<SideNavBar />
 			<div className={classes.container}>
-				<div>
+				<div className={classes.responsive}>
 					{videoURLs.map((v) => (
 						<>
 							<h1>{v.title}</h1>

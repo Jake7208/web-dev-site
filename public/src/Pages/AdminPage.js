@@ -72,6 +72,7 @@ const AdminPage = () => {
 						setErrorMsg(data.data);
 					} else {
 						// good login
+						setIsAuthorized(true);
 					}
 					console.log(data);
 				});
@@ -79,13 +80,6 @@ const AdminPage = () => {
 			.catch(() => {
 				console.log("oh no! 2");
 			});
-
-		// Add authentication login here
-		if (username === "admin" && password === "password") {
-			setIsAuthorized(true);
-		} else {
-			setIsAuthorized(false);
-		}
 	};
 
 	if (isLoading && !error) {

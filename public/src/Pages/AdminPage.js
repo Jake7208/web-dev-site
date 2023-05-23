@@ -87,7 +87,7 @@ const AdminPage = () => {
 		return <p>Loading...</p>;
 	}
 
-	if (status === 401) {
+	if (status === 401 && !isAuthorized) {
 		// login form goes here
 		return (
 			<div className={classes.container}>
@@ -137,54 +137,56 @@ const AdminPage = () => {
 		return <p>Failed to grab backend data!</p>;
 	}
 
-	return (
-		<div className={classes.container}>
-			<SideNavBar />
-			<div className={classes.Tabs}>
-				<ul className={classes.nav}>
-					<TabNavItem
-						title="Announcements"
-						id="tab1"
-						activeTab={activeTab}
-						setActiveTab={setActiveTab}
-					/>
-					<TabNavItem
-						title="Events"
-						id="tab2"
-						activeTab={activeTab}
-						setActiveTab={setActiveTab}
-					/>
-					<TabNavItem
-						title="Resources"
-						id="tab3"
-						activeTab={activeTab}
-						setActiveTab={setActiveTab}
-					/>
-					<TabNavItem
-						title="Videos"
-						id="tab4"
-						activeTab={activeTab}
-						setActiveTab={setActiveTab}
-					/>
-				</ul>
+	if (isAuthorized) {
+		return (
+			<div className={classes.container}>
+				<SideNavBar />
+				<div className={classes.Tabs}>
+					<ul className={classes.nav}>
+						<TabNavItem
+							title="Announcements"
+							id="tab1"
+							activeTab={activeTab}
+							setActiveTab={setActiveTab}
+						/>
+						<TabNavItem
+							title="Events"
+							id="tab2"
+							activeTab={activeTab}
+							setActiveTab={setActiveTab}
+						/>
+						<TabNavItem
+							title="Resources"
+							id="tab3"
+							activeTab={activeTab}
+							setActiveTab={setActiveTab}
+						/>
+						<TabNavItem
+							title="Videos"
+							id="tab4"
+							activeTab={activeTab}
+							setActiveTab={setActiveTab}
+						/>
+					</ul>
 
-				<div className={classes.outlet}>
-					<TabContent id="tab1" activeTab={activeTab}>
-						<AnnouncementTab data={data.announcements} />
-					</TabContent>
-					<TabContent id="tab2" activeTab={activeTab}>
-						<EventTab />
-					</TabContent>
-					<TabContent id="tab3" activeTab={activeTab}>
-						<ResourceTab />
-					</TabContent>
-					<TabContent id="tab4" activeTab={activeTab}>
-						<VideoTab />
-					</TabContent>
+					<div className={classes.outlet}>
+						<TabContent id="tab1" activeTab={activeTab}>
+							<AnnouncementTab data={data.announcements} />
+						</TabContent>
+						<TabContent id="tab2" activeTab={activeTab}>
+							<EventTab />
+						</TabContent>
+						<TabContent id="tab3" activeTab={activeTab}>
+							<ResourceTab />
+						</TabContent>
+						<TabContent id="tab4" activeTab={activeTab}>
+							<VideoTab />
+						</TabContent>
+					</div>
 				</div>
 			</div>
-		</div>
-	);
+		);
+	}
 };
 
 export default AdminPage;

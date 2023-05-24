@@ -25,6 +25,29 @@
 	padding-top: 10px;
 }
 
+/*.box {
+	background-color: transparent;
+	border: 2px solid #2b1e1e;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 600px;
+	height: 400px;
+	margin: 10px;
+	border-radius: 10px;
+	box-shadow: inset 0 0 10px #fa1935, 0 0 15px #fa1935, 0 0 20px #fa1935;
+	 transform: translateX(400%);
+	transition: transform 0.4s ease; 
+}
+
+.box:nth-of-type(even) {
+	transform: translateX(-400%);
+}
+
+.box.show {
+	transform: translateX(0);
+} */
+
 .videoLight {
 	background-color: #fa1935;
 	box-shadow: 0 0 10px #fa1935, 0 0 15px #fa1935, 0 0 20px #fa1935;

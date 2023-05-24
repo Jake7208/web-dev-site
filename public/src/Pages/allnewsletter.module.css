@@ -38,16 +38,6 @@
 	padding: 18px;
 	font-size: 20px;
 	font-family: "Orbitron", sans-serif;
-	transform: translateX(400%);
-	transition: transform 0.4s ease;
-}
-
-.container a:link:nth-of-type(even) {
-	transform: translateX(-400%);
-}
-
-.container.show a:link {
-	transform: translateX(0);
 }
 
 .container a:visited {

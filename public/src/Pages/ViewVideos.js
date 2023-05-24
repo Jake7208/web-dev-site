@@ -18,6 +18,44 @@ const ViewVideos = () => {
 		return <p>Error: {error.message}</p>;
 	}
 
+	/*Where do i put this???/how to write it in react???
+<script>
+    const boxes = document.querySelectorAll('.box')
+    window.addEventListener('scroll', checkBoxes)
+    checkboxes()
+
+    function checkBoxes(){
+        const triggerBottom = window.innerHeight / 5 * 4
+        boxes.forEach(box => {
+            const boxTop = box.getBoundingClientRect().top
+            if(boxTop < triggerBottom) {
+                box.classList.add('show')
+            } else {
+                box.classList.remove('show')
+            }
+        })
+    }
+</script>
+
+Is this the right syntax?
+	const boxes = () => {
+		document.querySelectorAll(".box");
+		window.addEventListener("scroll", checkBoxes);
+	};
+
+	function checkBoxes() {
+		const triggerBottom = (window.innerHeight / 5) * 4;
+		boxes.forEach((box) => {
+			const boxTop = box.getBoundingClientRect().top;
+			if (boxTop < triggerBottom) {
+				box.classList.add("show");
+			} else {
+				box.classList.remove("show");
+			}
+		});
+	}
+*/
+
 	return (
 		<div className={classes.page}>
 			<SideNavBar />
@@ -26,16 +64,18 @@ const ViewVideos = () => {
 					{videoURLs.map((v) => (
 						<>
 							<h1>{v.title}</h1>
-							<iframe
-								width="560"
-								height="315"
-								src={v.link}
-								title="YouTube video player"
-								frameborder="0"
-								allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-								allowfullscreen
-								className={classes.videoLight}
-							></iframe>
+							<div className={classes.box}>
+								<iframe
+									width="560"
+									height="315"
+									src={v.link}
+									title="YouTube video player"
+									frameborder="0"
+									allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+									allowfullscreen
+									className={classes.videoLight}
+								></iframe>
+							</div>
 						</>
 					))}
 				</div>

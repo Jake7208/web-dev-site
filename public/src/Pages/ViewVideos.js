@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import useFetch from "../Hooks/useFetch";
 import SideNavBar from "../components/SideNavBar";
 import classes from "./ViewVideos.module.css";
@@ -55,6 +55,21 @@ Is this the right syntax?
 		});
 	}
 */
+	//Or this way...
+	// useEffect(() => {
+	// 	const boxes = document.querySelectorAll(".box");
+	// 	window.addEventListener("scroll", () => {
+	// 		const triggerBottom = (window.innerHeight / 5) * 4;
+	// 		boxes.forEach((box) => {
+	// 			const boxTop = box.getBoundingClientRect().top;
+	// 			if (boxTop < triggerBottom) {
+	// 				box.classList.add("show");
+	// 			} else {
+	// 				box.classList.remove("show");
+	// 			}
+	// 		});
+	// 	});
+	// }, []);
 
 	return (
 		<div className={classes.page}>

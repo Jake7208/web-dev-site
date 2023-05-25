@@ -25,7 +25,7 @@
 	padding-top: 10px;
 }
 
-/*.box {
+/* .box {
 	background-color: transparent;
 	border: 2px solid #2b1e1e;
 	display: flex;
@@ -37,7 +37,7 @@
 	border-radius: 10px;
 	box-shadow: inset 0 0 10px #fa1935, 0 0 15px #fa1935, 0 0 20px #fa1935;
 	transform: translateX(400%);
-	transition: transform 0.4s ease; 
+	transition: transform 0.4s ease;
 }
 
 .box:nth-of-type(even) {

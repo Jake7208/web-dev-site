@@ -52,7 +52,11 @@ const AllNewsletter = () => {
 					<div>
 						{allnewsletterArray.map((newsletter) => {
 							console.log(newsletter);
-							return <a href={newsletter.url}>{newsletter.title}</a>;
+							return (
+								<a className={classes.box} href={newsletter.url}>
+									{newsletter.title}
+								</a>
+							);
 						})}
 					</div>
 				</div>

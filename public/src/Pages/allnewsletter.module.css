@@ -20,6 +20,7 @@
 	flex-direction: column;
 	align-items: center;
 	margin-left: 20px;
+	/* overflow-x: hidden; */
 }
 
 .container h3 {
@@ -40,7 +41,7 @@
 }
 
 .container a:visited {
-	color: rgb(6, 6, 185);
+	color: aliceblue;
 }
 
 .container a:hover {

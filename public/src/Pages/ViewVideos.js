@@ -10,52 +10,7 @@ const ViewVideos = () => {
 
 	console.log(videoURLs, error);
 
-	if (!videoURLs && !error) {
-		return <p>Loading...</p>;
-	}
-
-	if (error) {
-		return <p>Error: {error.message}</p>;
-	}
-
-	/*Where do i put this???/how to write it in react???
-<script>
-    const boxes = document.querySelectorAll('.box')
-    window.addEventListener('scroll', checkBoxes)
-    checkboxes()
-
-    function checkBoxes(){
-        const triggerBottom = window.innerHeight / 5 * 4
-        boxes.forEach(box => {
-            const boxTop = box.getBoundingClientRect().top
-            if(boxTop < triggerBottom) {
-                box.classList.add('show')
-            } else {
-                box.classList.remove('show')
-            }
-        })
-    }
-</script>
-
-Is this the right syntax?
-	const boxes = () => {
-		document.querySelectorAll(".box");
-		window.addEventListener("scroll", checkBoxes);
-	};
-
-	function checkBoxes() {
-		const triggerBottom = (window.innerHeight / 5) * 4;
-		boxes.forEach((box) => {
-			const boxTop = box.getBoundingClientRect().top;
-			if (boxTop < triggerBottom) {
-				box.classList.add("show");
-			} else {
-				box.classList.remove("show");
-			}
-		});
-	}
-*/
-	//Or this way...
+	//Annimate on scroll not working???
 	// useEffect(() => {
 	// 	const boxes = document.querySelectorAll(".box");
 	// 	window.addEventListener("scroll", () => {
@@ -71,8 +26,16 @@ Is this the right syntax?
 	// 	});
 	// }, []);
 
+	if (!videoURLs && !error) {
+		return <p>Loading...</p>;
+	}
+
+	if (error) {
+		return <p>Error: {error.message}</p>;
+	}
+
 	return (
-		<div className={classes.page}>
+		<div className={classes.page} onScroll>
 			<SideNavBar />
 			<div className={classes.container}>
 				<div className={classes.responsive}>

@@ -1,10 +1,28 @@
 @import url("https://fonts.googleapis.com/css2?family=Rampart+One&display=swap");
 
+@property --color-1 {
+	syntax: "<color>";
+	inherits: true;
+	initial-value: #0f2027;
+}
+
+@property --color-2 {
+	syntax: "<color>";
+	inherits: true;
+	initial-value: #024659;
+}
+
 .page {
-	background: #0f2027;
+	background-image: linear-gradient(90deg, var(--color-1), var(--color-2));
 	background-size: cover;
 	min-width: 100%;
 	min-height: 100%;
+	transition: --color-1 1000ms, --color-2 2000ms 1000ms;
+}
+
+.page:hover {
+	--color-1: #024659;
+	--color-2: #0f2027;
 }
 
 .container {

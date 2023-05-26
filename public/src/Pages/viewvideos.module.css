@@ -9,7 +9,7 @@
 @property --color-2 {
 	syntax: "<color>";
 	inherits: true;
-	initial-value: #024659;
+	initial-value: #023340;
 }
 
 .page {
@@ -21,7 +21,7 @@
 }
 
 .page:hover {
-	--color-1: #024659;
+	--color-1: #023340;
 	--color-2: #0f2027;
 }
 

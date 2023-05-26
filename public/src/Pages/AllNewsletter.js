@@ -61,6 +61,17 @@ const AllNewsletter = () => {
 					</div>
 				</div>
 			</div>
+			<div className={classes.backBox}>
+				<ul>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ul>
+			</div>
 		</div>
 	);
 };
